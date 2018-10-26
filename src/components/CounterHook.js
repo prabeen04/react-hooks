@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
     button: {
@@ -16,10 +17,14 @@ const styles = theme => ({
 const CounterHook = (props) => {
     const { classes } = props;
     const [count, setCount] = useState(0)
-    document.title = count;
+    document.title = `Current Count: ${count}`;
     return (
         <div>
-            <h3>{count}</h3>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Typography component="h2" variant="display3" gutterBottom>
+                    {count}
+                </Typography>
+            </div>
             <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
                 <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
                     onClick={() => setCount(count + 4)}>
@@ -29,5 +34,9 @@ const CounterHook = (props) => {
         </div>
     )
 }
+
+CounterHook.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(CounterHook);
