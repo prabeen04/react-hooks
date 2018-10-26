@@ -16,6 +16,7 @@ const styles = theme => ({
 const CounterHook = (props) => {
     const { classes } = props;
     const [count, setCount] = useState(0)
+    document.title = count;
     return (
         <div>
             <h3>{count}</h3>
