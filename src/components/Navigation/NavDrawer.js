@@ -48,12 +48,12 @@ class NavDrawer extends React.Component {
         );
         return (
             <div>
-                <Drawer open={this.props.isOpen} onClose={this.toggleDrawer('left', false)}>
+                <Drawer open={this.props.isOpen} onClose={() => console.log('Toggle Drawer')}>
                     <div
                         tabIndex={0}
                         role="button"
-                        onClick={this.toggleDrawer('left', false)}
-                        onKeyDown={this.toggleDrawer('left', false)}
+                        // onClick={this.toggleDrawer('left', false)}
+                        // onKeyDown={this.toggleDrawer('left', false)}
                     >
                         {sideList}
                     </div>
