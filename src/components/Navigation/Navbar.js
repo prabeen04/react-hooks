@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,6 +9,8 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+
+import NavDrawer from './NavDrawer';
 
 const styles = theme => ({
   root: {
@@ -70,6 +72,7 @@ const styles = theme => ({
   },
 });
 
+const [isOpen, setIsOpen ] = useState(false)
 function SearchAppBar(props) {
   const { classes } = props;
   return (
