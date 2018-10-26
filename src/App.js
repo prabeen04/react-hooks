@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import CounterHook from './components/CounterHook'
+import Navbar from './components/Navigation/Navbar'
 class App extends Component {
   render() {
     return (
       <div>
-        <CounterHook/>
+        <Navbar />
+        <CounterHook />
       </div>
     );
   }
