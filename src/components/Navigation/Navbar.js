@@ -100,7 +100,7 @@ function SearchAppBar(props) {
                     </div>
                 </Toolbar>
             </AppBar>
-            <NavDrawer isOpen={isOpen} />
+            <NavDrawer isOpen={isOpen} handleDrawerOpen={handleDrawerOpen}/>
         </div>
     );
 }
