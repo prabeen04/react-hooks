@@ -14,28 +14,27 @@ const styles = theme => ({
         marginRight: theme.spacing.unit,
     },
 });
-
 const CounterHook = (props) => {
     const { classes } = props;
     const [count, setCount] = useState(0)
-    // const advice = useAdvice('abc')
-    // console.log(advice)
+    const advice = useAdvice('abc')
+    console.log(advice)
     document.title = `Current Count: ${count}`;
     return (
-    <div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography component="h2" variant="display3" gutterBottom>
-                {count}
-            </Typography>
+        <div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Typography component="h2" variant="display1" gutterBottom>
+                   {/* { advice && <pre>{advice.slip.advice}</pre>} */}
+                </Typography>
+            </div>
+            <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
+                <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
+                    onClick={() => console.log('button clicked')}>
+                    <AddIcon />
+                </Button>
+            </div>
         </div>
-        <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
-            <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
-                onClick={() => useAdvice()}>
-                <AddIcon />
-            </Button>
-        </div>
-    </div>
-)
+    )
 }
 
 CounterHook.propTypes = {
