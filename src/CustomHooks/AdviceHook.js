@@ -9,7 +9,7 @@ export default function useAdvice(url) {
                 setAdvice(res)
                 console.log(res)
             })
-            .catch(err => console.log(err)
+            .catch(err => console.log(err))
         })
     return advice
 }

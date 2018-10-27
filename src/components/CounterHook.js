@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
+import useAdvice from '../CustomHooks/AdviceHook';
 
 const styles = theme => ({
     button: {
@@ -17,22 +18,24 @@ const styles = theme => ({
 const CounterHook = (props) => {
     const { classes } = props;
     const [count, setCount] = useState(0)
+    // const advice = useAdvice('abc')
+    // console.log(advice)
     document.title = `Current Count: ${count}`;
     return (
-        <div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography component="h2" variant="display3" gutterBottom>
-                    {count}
-                </Typography>
-            </div>
-            <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
-                <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
-                    onClick={() => setCount(count + 4)}>
-                    <AddIcon />
-                </Button>
-            </div>
+    <div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Typography component="h2" variant="display3" gutterBottom>
+                {count}
+            </Typography>
         </div>
-    )
+        <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
+            <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
+                onClick={() => useAdvice()}>
+                <AddIcon />
+            </Button>
+        </div>
+    </div>
+)
 }
 
 CounterHook.propTypes = {
