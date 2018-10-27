@@ -31,6 +31,7 @@ const CounterHook = (props) => {
                 <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
                     onClick={() => {
                         console.log('button clicked')
+                        setCount(count + 1)
                         // const advice = useAdvice('abd');
                         // console.log(advice)
                         }}>
