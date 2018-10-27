@@ -71,16 +71,16 @@ const styles = theme => ({
         },
     },
 });
-
 function SearchAppBar(props) {
     const [isOpen, setIsOpen] = useState(false)
     const { classes } = props;
+    const handleDrawerOpen = () => setIsOpen(!isOpen)
     return (
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-                        <MenuIcon />
+                        <MenuIcon onClick={handleDrawerOpen} />
                     </IconButton>
                     <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                         Material-UI
