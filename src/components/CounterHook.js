@@ -22,7 +22,7 @@ const CounterHook = (props) => {
     document.title = `Current Count: ${count}`;
     return (
         <div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', }}>
                 <Typography component="h2" variant="display1" gutterBottom>
                    { advice && <pre>{advice.slip.advice}</pre>}
                 </Typography>
