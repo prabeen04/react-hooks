@@ -26,12 +26,9 @@ function Unsplash(props) {
     <div>
       <Card className={classes.card}>
         <CardActionArea>
-          {/* <CardMedia
-            className={classes.media}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-          /> */}
-          <Image />
+          <CardMedia
+            component={()=> <Image />}
+          />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               Lizard
