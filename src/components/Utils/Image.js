@@ -8,9 +8,7 @@ export default function Image() {
     return (
         <div>
             <React.Suspense maxDuration={300} fallback={'loading...'}>
-            <div style={{width: '90vw', height: '90vh'}}>
-                <Img src="https://source.unsplash.com/random/4000x2000" style={{width: '100%'}}/>
-            </div>
+                <Img src="https://source.unsplash.com/random/4000x2000" style={{width: 'auto'}}/>
             </React.Suspense>
         </div>
     )
