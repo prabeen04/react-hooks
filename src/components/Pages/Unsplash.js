@@ -21,13 +21,13 @@ const styles = {
 };
 
 function Unsplash(props) {
-  const { classes } = props;
+  const { classes, url } = props;
   return (
     <div>
       <Card className={classes.card}>
         <CardActionArea>
           <CardMedia
-            component={()=> <Image />}
+            component={()=> <Image url={url}/>}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -54,6 +54,7 @@ function Unsplash(props) {
 
 Unsplash.propTypes = {
   classes: PropTypes.object.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(Unsplash);

@@ -13,9 +13,9 @@ class App extends Component {
           <Navbar />
           <CounterHook />
           <FlexContainer style={{ justifyContent: 'space-evenly'}}>
-            <Unsplash />
-            <Unsplash />
-            <Unsplash />
+            <Unsplash url='https://source.unsplash.com/random/4000x2000'/>
+            <Unsplash url='https://source.unsplash.com/random/3000x2000' />
+            <Unsplash url='https://source.unsplash.com/random/4000x2001' />
           </FlexContainer>
         </ApplicationWrapper>
       </React.Fragment>
