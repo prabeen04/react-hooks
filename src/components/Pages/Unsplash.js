@@ -20,7 +20,8 @@ const styles = {
   },
 };
 
-export default function Unsplash() {
+export default function Unsplash(props) {
+  const { classes } = props;
   return (
     <div>
       <Card className={classes.card}>
@@ -53,3 +54,9 @@ export default function Unsplash() {
     </div>
   )
 }
+
+MediaCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(MediaCard);
