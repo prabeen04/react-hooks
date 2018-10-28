@@ -20,7 +20,7 @@ const styles = {
   },
 };
 
-export default function Unsplash(props) {
+function Unsplash(props) {
   const { classes } = props;
   return (
     <div>
