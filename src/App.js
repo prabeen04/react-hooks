@@ -11,8 +11,8 @@ class App extends Component {
       <React.Fragment>
         <ApplicationWrapper>
           <Navbar />
-          <Unsplash />
           <CounterHook />
+          <Unsplash />
         </ApplicationWrapper>
       </React.Fragment>
     );
