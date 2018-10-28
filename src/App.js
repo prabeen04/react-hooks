@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CounterHook from './components/CounterHook';
 import Navbar from './components/Navigation/Navbar';
 import Unsplash from "./components/Pages/Unsplash";
-import { ApplicationWrapper } from "./components/UI/Layouts";
+import { ApplicationWrapper, FlexContainer } from "./components/UI/Layouts";
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,11 @@ class App extends Component {
         <ApplicationWrapper>
           <Navbar />
           <CounterHook />
-          <Unsplash />
+          <FlexContainer style={{ justifyContent: 'space-evenly'}}>
+            <Unsplash />
+            <Unsplash />
+            <Unsplash />
+          </FlexContainer>
         </ApplicationWrapper>
       </React.Fragment>
     );
