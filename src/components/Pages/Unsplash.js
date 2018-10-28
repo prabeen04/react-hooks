@@ -26,11 +26,12 @@ function Unsplash(props) {
     <div>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia
+          {/* <CardMedia
             className={classes.media}
             image="/static/images/cards/contemplative-reptile.jpg"
             title="Contemplative Reptile"
-          />
+          /> */}
+          <Image />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               Lizard
@@ -50,13 +51,12 @@ function Unsplash(props) {
         </Button>
         </CardActions>
       </Card>
-      <Image />
     </div>
   )
 }
 
-MediaCard.propTypes = {
+Unsplash.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(MediaCard);
+export default withStyles(styles)(Unsplash);
