@@ -28,13 +28,18 @@ class NavDrawer extends React.Component {
         const sideList = (
             <div className={classes.list}>
                 <List>
-                    {['Home', 'News'].map((text, index) => (
-                        <Link to={text.toLowerCase()}><ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
+                    <Link to='/'>
+                        <ListItem button>
+                            <ListItemIcon><InboxIcon /></ListItemIcon>
+                            <ListItemText primary='Home' />
                         </ListItem>
-                        </Link>
-                    ))}
+                    </Link>
+                    <Link to='/news'>
+                        <ListItem button>
+                            <ListItemIcon><MailIcon /></ListItemIcon>
+                            <ListItemText primary='News' />
+                        </ListItem>
+                    </Link>
                 </List>
             </div>
         );
