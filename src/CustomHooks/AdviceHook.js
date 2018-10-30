@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function useAdvice() {
     const [advice, setAdvice] = useState(null);
     useEffect(() => {
-        // setTimeout(() =>{
+        setTimeout(() =>{
             fetch(`http://api.adviceslip.com/advice`)
                 .then(res => res.json())
                 .then(res => {
@@ -11,8 +11,8 @@ export default function useAdvice() {
                     console.log(res)
                 })
                 .catch(err => console.log(err))
-        // }, 4000)
-        // return () => clearTimeout();
+        }, 4000)
+        return () => clearTimeout();
         })
-    return advice
+    return advice || null
 }

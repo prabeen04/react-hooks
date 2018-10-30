@@ -15,10 +15,12 @@ const styles = theme => ({
     },
 });
 function handleAdviceClick() {
-    const advice = useAdvice()
+    console.log('inside handleAdviceClick')
+    // const advice = useAdvice()
 }
 
 const CounterHook = (props) => {
+    const advice = useAdvice()
     const { classes } = props;
     const [count, setCount] = useState(0)
     // console.log(advice)
