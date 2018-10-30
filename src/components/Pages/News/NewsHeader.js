@@ -14,21 +14,73 @@ import Select from '@material-ui/core/Select';
 
 const styles = theme => ({
     container: {
-      display: 'flex',
-      flexWrap: 'wrap',
+        display: 'flex',
+        flexWrap: 'wrap',
     },
     formControl: {
-      margin: theme.spacing.unit,
-      minWidth: 120,
+        margin: theme.spacing.unit,
+        minWidth: 120,
     },
-  });
-  
+});
+
 function NewsHeader() {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <>
+            <Dialog
+                disableBackdropClick
+                disableEscapeKeyDown
+                open={true}
+                onClose={this.handleClose}
+            >
+                <DialogTitle>Fill the form</DialogTitle>
+                <DialogContent>
+                    <form className={classes.container}>
+                        <FormControl className={classes.formControl}>
+                            <InputLabel htmlFor="age-native-simple">Age</InputLabel>
+                            <Select
+                                native
+                                value={this.state.age}
+                                onChange={this.handleChange('age')}
+                                input={<Input id="age-native-simple" />}
+                            >
+                                <option value="" />
+                                <option value={10}>Ten</option>
+                                <option value={20}>Twenty</option>
+                                <option value={30}>Thirty</option>
+                            </Select>
+                        </FormControl>
+                        <FormControl className={classes.formControl}>
+                            <InputLabel htmlFor="age-simple">Age</InputLabel>
+                            <Select
+                                value={this.state.age}
+                                onChange={this.handleChange('age')}
+                                input={<Input id="age-simple" />}
+                            >
+                                <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={20}>Twenty</MenuItem>
+                                <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </form>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={this.handleClose} color="primary">
+                        Cancel
+            </Button>
+                    <Button onClick={this.handleClose} color="primary">
+                        Ok
+            </Button>
+                </DialogActions>
+            </Dialog>
+        </>
+    )
 }
 
-export default NewsHeader;
+NewsHeader.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(NewsHeader);
