@@ -1,9 +1,10 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Navbar from './components/Navigation/Navbar';
-import Home from "./components/Pages/Home/Home";
 import { ApplicationWrapper } from "./components/UI/Layouts";
 import './App.css';
+
+const Home = lazy(() => import('./components/Pages/Home/Home'))
 
 class App extends Component {
   render() {
@@ -11,9 +12,9 @@ class App extends Component {
       <React.Fragment>
         <ApplicationWrapper>
           <Navbar />
-          <Suspense>
+          <Suspense fallback={<div>Loading ...</div>}>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={() => <Home/>} />
             </Switch>
           </Suspense>
         </ApplicationWrapper>
