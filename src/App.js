@@ -5,6 +5,7 @@ import { ApplicationWrapper } from "./components/UI/Layouts";
 import './App.css';
 
 const Home = lazy(() => import('./components/Pages/Home/Home'))
+const News = lazy(() => import('./components/Pages/News/News'))
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
           <Navbar />
           <Suspense fallback={<div>Loading ...</div>}>
             <Switch>
-              <Route exact path="/" component={() => <Home/>} />
+              <Route exact path="/" component={() => <Home />} />
+              <Route exact path="/news" component={() => <News />} />
             </Switch>
           </Suspense>
         </ApplicationWrapper>
