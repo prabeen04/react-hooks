@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -22,16 +22,17 @@ const styles = theme => ({
         minWidth: 140,
     },
 });
-
 function NewsHeader(props) {
+    const [modalOpen, setModalOpen] = useState(false)
     const { classes } = props;
     return (
         <>
+            <Button onClick={() => setModalOpen(!modalOpen)}>Select News </Button>
             <Dialog
                 disableBackdropClick
                 disableEscapeKeyDown
-                open={false}
-                // onClose={this.handleClose}
+                open={modalOpen}
+            // onClose={this.handleClose}
             >
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
