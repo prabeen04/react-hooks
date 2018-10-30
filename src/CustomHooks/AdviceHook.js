@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useAdvice(url) {
+export default function useAdvice() {
     const [advice, setAdvice] = useState(null);
     useEffect(() => {
         // setTimeout(() =>{

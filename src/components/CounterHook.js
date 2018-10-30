@@ -15,7 +15,7 @@ const styles = theme => ({
     },
 });
 function handleAdviceClick() {
-    const advice = useAdvice('abc')
+    const advice = useAdvice()
 }
 
 const CounterHook = (props) => {
@@ -32,13 +32,15 @@ const CounterHook = (props) => {
             </div>
             <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
                 <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
-                    onClick={() => {
-                        console.log('button clicked')
-                        setCount(count + 1)
+                    onClick={
+                        // () => {
+                        // console.log('button clicked')
+                        // setCount(count + 1)
                         handleAdviceClick
                         // const advice = useAdvice('abd');
                         // console.log(advice)
-                    }}>
+                    // }
+                }>
                     <AddIcon />
                 </Button>
             </div>
