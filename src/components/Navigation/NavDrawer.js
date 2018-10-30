@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -28,10 +29,11 @@ class NavDrawer extends React.Component {
             <div className={classes.list}>
                 <List>
                     {['Home', 'News'].map((text, index) => (
-                        <ListItem button key={text}>
+                        <Link to={text.toLowerCase()}><ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
+                        </Link>
                     ))}
                 </List>
             </div>
