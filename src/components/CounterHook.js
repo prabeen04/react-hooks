@@ -14,17 +14,20 @@ const styles = theme => ({
         marginRight: theme.spacing.unit,
     },
 });
+function handleAdviceClick() {
+    const advice = useAdvice('abc')
+}
+
 const CounterHook = (props) => {
     const { classes } = props;
     const [count, setCount] = useState(0)
-    const advice = useAdvice('abc')
     // console.log(advice)
     document.title = `Current Count: ${count}`;
     return (
         <div>
             <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', }}>
                 <Typography component="h2" variant="display1" gutterBottom>
-                   { advice && <pre>{advice.slip.advice}</pre>}
+                    {advice && <pre>{advice.slip.advice}</pre>}
                 </Typography>
             </div>
             <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
@@ -32,9 +35,10 @@ const CounterHook = (props) => {
                     onClick={() => {
                         console.log('button clicked')
                         setCount(count + 1)
+                        handleAdviceClick
                         // const advice = useAdvice('abd');
                         // console.log(advice)
-                        }}>
+                    }}>
                     <AddIcon />
                 </Button>
             </div>
