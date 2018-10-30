@@ -1,9 +1,9 @@
 import React from 'react'
-
+import NewsHeader from './NewsHeader';
 function News() {
   return (
     <div>
-      <h3>news</h3>
+      <NewsHeader/>
     </div>
   )
 }
