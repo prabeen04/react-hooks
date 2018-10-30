@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import CounterHook from './components/CounterHook';
+import React, { Component, lazy, Suspense } from 'react';
+import { Route, Switch } from "react-router-dom";
 import Navbar from './components/Navigation/Navbar';
 import Home from "./components/Pages/Home/Home";
-import { ApplicationWrapper, FlexContainer } from "./components/UI/Layouts";
+import { ApplicationWrapper } from "./components/UI/Layouts";
 import './App.css';
 
 class App extends Component {
@@ -11,7 +11,11 @@ class App extends Component {
       <React.Fragment>
         <ApplicationWrapper>
           <Navbar />
-          <Home />
+          <Suspense>
+            <Switch>
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </Suspense>
         </ApplicationWrapper>
       </React.Fragment>
     );
