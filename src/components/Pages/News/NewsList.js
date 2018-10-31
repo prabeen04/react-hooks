@@ -7,6 +7,10 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import news_api_url from '../../../config';
+
+const [sources, setSources ] = useState([]);
+
 const styles = theme => ({
     container: {
         display: 'flex',
