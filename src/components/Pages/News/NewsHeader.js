@@ -8,8 +8,8 @@ import NewsList from './NewsList';
 import { news_api_url } from '../../../config';
 
 function NewsHeader(props) {
-    const [modalOpen, setModalOpen] = useState(false)
     const { classes } = props;
+    const [modalOpen, setModalOpen] = useState(false)
     const [sources, setSources] = useState([]);
     useEffect(() => {
         fetch(`${news_api_url}/sources`)

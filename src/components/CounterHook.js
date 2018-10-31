@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
 import useAdvice from '../CustomHooks/AdviceHook';
 
 const styles = theme => ({
@@ -28,9 +27,9 @@ const CounterHook = (props) => {
     return (
         <div>
             <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', }}>
-                <Typography component="h2" variant="display1" gutterBottom>
+                <h3>
                     {advice && <pre>{advice.slip.advice}</pre>}
-                </Typography>
+                </h3>
             </div>
             <div style={{ position: 'fixed', bottom: 10, right: 10 }}>
                 <Button variant="fab" color="primary" aria-label="Add" className={classes.button}
