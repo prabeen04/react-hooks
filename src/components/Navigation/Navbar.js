@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
@@ -82,9 +81,9 @@ function SearchAppBar(props) {
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
                         <MenuIcon onClick={handleDrawerOpen} />
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                    <h3 className={classes.title}>
                         Material-UI
-          </Typography>
+          </h3>
                     <div className={classes.grow} />
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
