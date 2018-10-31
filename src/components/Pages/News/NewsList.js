@@ -7,9 +7,7 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import news_api_url from '../../../config';
-
-const [sources, setSources ] = useState([]);
+import { news_api_url } from '../../../config';
 
 const styles = theme => ({
     container: {
@@ -24,7 +22,13 @@ const styles = theme => ({
 
 function NewsList(props) {
     const { classes } = props;
-
+    const [sources, setSources] = useState([]);
+    useEffect(() => {
+        fetch(`${news_api_url}/sources`)
+            .then(res => res.json())
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    })
     return (
         <>
             <form className={classes.container}>
