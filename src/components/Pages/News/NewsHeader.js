@@ -9,6 +9,16 @@ import NewsList from './NewsList';
 function NewsHeader(props) {
     const [modalOpen, setModalOpen] = useState(false)
     const { classes } = props;
+    const [sources, setSources] = useState([]);
+    useEffect(() => {
+        fetch(`${news_api_url}/sources`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                setSources(res.sources)
+            })
+            .catch(err => console.log(err))
+    }, [sources])
     return (
         <>
             <Button onClick={() => setModalOpen(!modalOpen)}>Select News </Button>
@@ -18,7 +28,7 @@ function NewsHeader(props) {
             >
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
-                    <NewsList/>
+                    <NewsList sources={sources}/>
                 </DialogContent>
                 <DialogActions>
                     {/* <Button onClick={this.handleClose} color="primary">

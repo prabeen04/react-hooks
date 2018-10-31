@@ -22,16 +22,7 @@ const styles = theme => ({
 
 function NewsList(props) {
     const { classes } = props;
-    const [sources, setSources] = useState([]);
-    useEffect(() => {
-        fetch(`${news_api_url}/sources`)
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
-                setSources(res.sources)
-            })
-            .catch(err => console.log(err))
-    }, [sources])
+
     return (
         <>
             <form className={classes.container}>
