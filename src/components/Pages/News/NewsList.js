@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -21,7 +21,7 @@ const styles = theme => ({
 
 function NewsList(props) {
     const { classes } = props;
-
+    const [selectedSource, setSelectedSource] = useState('');
     return (
         <>
             <form className={classes.container}>
@@ -29,7 +29,7 @@ function NewsList(props) {
                     <InputLabel htmlFor="age-simple">Age</InputLabel>
                     <Select
                         value={10}
-                        // onChange={this.handleChange('age')}
+                        onChange={() => setSelectedSource(source.id)}
                         input={<Input id="age-simple" />}
                     >
                         {
