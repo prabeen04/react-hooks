@@ -29,7 +29,7 @@ function NewsList(props) {
                     <InputLabel htmlFor="age-simple">Age</InputLabel>
                     <Select
                         value={10}
-                        onChange={() => setSelectedSource(source.id)}
+                        onChange={(e) => setSelectedSource(e.target.value)}
                         input={<Input id="age-simple" />}
                     >
                         {
