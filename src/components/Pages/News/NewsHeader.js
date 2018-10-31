@@ -19,7 +19,7 @@ function NewsHeader(props) {
                 setSources(res.sources)
             })
             .catch(err => console.log(err))
-    }, [sources])
+    }, [])
     return (
         <>
             <Button onClick={() => setModalOpen(!modalOpen)}>Select News </Button>
