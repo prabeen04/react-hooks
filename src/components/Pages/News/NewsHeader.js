@@ -29,16 +29,8 @@ function NewsHeader(props) {
             >
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
-                    <NewsList sources={sources}/>
+                    <NewsList sources={sources} />
                 </DialogContent>
-                <DialogActions>
-                    {/* <Button onClick={this.handleClose} color="primary">
-                        Cancel
-                    </Button>
-                            <Button onClick={this.handleClose} color="primary">
-                                Ok
-                    </Button> */}
-                </DialogActions>
             </Dialog>
         </>
     )
