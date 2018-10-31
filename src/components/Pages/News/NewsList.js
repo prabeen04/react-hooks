@@ -26,7 +26,10 @@ function NewsList(props) {
     useEffect(() => {
         fetch(`${news_api_url}/sources`)
             .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                setSources(res.data)
+            })
             .catch(err => console.log(err))
     })
     return (
@@ -39,12 +42,11 @@ function NewsList(props) {
                         // onChange={this.handleChange('age')}
                         input={<Input id="age-simple" />}
                     >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        {
+                            sources && sources.map((source, i) => (
+                                <MenuItem value={source.id}>{source.map}</MenuItem>
+                            ))
+                        }
                     </Select>
                 </FormControl>
             </form>
