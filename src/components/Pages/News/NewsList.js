@@ -28,10 +28,10 @@ function NewsList(props) {
             .then(res => res.json())
             .then(res => {
                 console.log(res)
-                setSources(res.data)
+                setSources(res.sources)
             })
             .catch(err => console.log(err))
-    })
+    }, [sources])
     return (
         <>
             <form className={classes.container}>
@@ -44,7 +44,7 @@ function NewsList(props) {
                     >
                         {
                             sources && sources.map((source, i) => (
-                                <MenuItem value={source.id}>{source.map}</MenuItem>
+                                <MenuItem key={i} value={source.id}>{source.name}</MenuItem>
                             ))
                         }
                     </Select>
