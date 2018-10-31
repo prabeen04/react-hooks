@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -7,7 +7,6 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { news_api_url } from '../../../config';
 
 const styles = theme => ({
     container: {
@@ -34,7 +33,7 @@ function NewsList(props) {
                         input={<Input id="age-simple" />}
                     >
                         {
-                            sources && sources.map((source, i) => (
+                            props.sources && props.sources.map((source, i) => (
                                 <MenuItem key={i} value={source.id}>{source.name}</MenuItem>
                             ))
                         }

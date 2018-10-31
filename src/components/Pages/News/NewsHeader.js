@@ -5,6 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import NewsList from './NewsList';
+import { news_api_url } from '../../../config';
 
 function NewsHeader(props) {
     const [modalOpen, setModalOpen] = useState(false)
