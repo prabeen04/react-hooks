@@ -16,7 +16,7 @@ function News() {
   }, [])
   return (
     <React.Fragment>
-      <NewsHeader />
+      <NewsHeader sources={sources} />
       <NewsBody />
     </React.Fragment>
   )
