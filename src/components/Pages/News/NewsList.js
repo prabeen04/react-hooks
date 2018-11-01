@@ -28,7 +28,7 @@ function NewsList(props) {
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="age-simple">Age</InputLabel>
                     <Select
-                        value={10}
+                        value={selectedSource}
                         onChange={(e) => setSelectedSource(e.target.value)}
                         input={<Input id="age-simple" />}
                     >
