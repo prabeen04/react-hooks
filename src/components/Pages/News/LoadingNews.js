@@ -14,9 +14,17 @@ const styles = {
     },
 };
 const LoadingNews = (props) => {
-    return (
-        <div>
+    const { classes } = props;
 
+    return (
+        <div className={classes.root}>
+            <LinearProgress />
+            <br />
+            <LinearProgress color="secondary" />
+            <br />
+            <LinearProgress
+                classes={{ colorPrimary: classes.colorPrimary, barColorPrimary: classes.barColorPrimary }}
+            />
         </div>
     )
 }

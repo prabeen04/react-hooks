@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { news_api_key, news_api_url } from "../../../config";
+import LoadingNews from './LoadingNews';
+
 const NewsBody = (props) => {
     const [articles, setArticles] = useState(null);
     const [fetching, setFetching] = useState(true)
@@ -19,7 +21,7 @@ const NewsBody = (props) => {
     })
     return (
         <div>
-            {fetching && <p>Loading...</p>}
+            {fetching && <LoadingNews/>}
             {articles && articles.map((article, i) => {
                 return <h3 key={i}>{article.title}</h3>
             })}
