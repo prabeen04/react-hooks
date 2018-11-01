@@ -5,7 +5,7 @@ import { news_api_url } from '../../../config';
 
 function News(props) {
   const [sources, setSources] = useState([]);
-  const [selectedSource, setSelectedSource] = useState('')
+  const [selectedSource, setSelectedSource] = useState('buzzfeed')
 
   useEffect(() => {
     fetch(`${news_api_url}/sources`)
