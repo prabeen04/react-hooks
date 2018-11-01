@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { news_api_key, news_api_url } from "../../../config";
 const NewsBody = (props) => {
-    const [news, setNews] = useState(null)
+    const [articles, setArticles] = useState(null)
     useEffect(() => {
         fetch(`${news_api_url}articles?source=${props.selectedSource}&sortBy=top&apiKey=${news_api_key}`)
             .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                setArticles(res.articles)
+            })
             .catch(err => console.log(err))
     })
     return (
         <div>
             <h3>NewsBody</h3>
-            <h3>{props.selectedSource}</h3>
+            {articles && articles.map((article, i) => {
+               return <h3 key={i}>{article.title}</h3>
+            })}
         </div>
     )
 }
