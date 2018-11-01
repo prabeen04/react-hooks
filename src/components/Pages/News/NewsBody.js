@@ -18,11 +18,11 @@ const NewsBody = (props) => {
                 setFetching(false)
                 console.log(err)
             })
-    })
+    },[props.selectedSource])
     return (
         <div>
             {fetching && <LoadingNews/>}
-            {articles && articles.map((article, i) => {
+            {!fetching && articles && articles.map((article, i) => {
                 return <h3 key={i}>{article.title}</h3>
             })}
         </div>
