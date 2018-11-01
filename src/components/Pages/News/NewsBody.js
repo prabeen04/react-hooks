@@ -13,7 +13,7 @@ const NewsBody = (props) => {
     })
     return (
         <div>
-            <h3>NewsBody</h3>
+            {!props.article && <p>Loading...</p>}
             {articles && articles.map((article, i) => {
                return <h3 key={i}>{article.title}</h3>
             })}

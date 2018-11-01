@@ -27,10 +27,12 @@ function NewsList(props) {
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="age-simple">Age</InputLabel>
                     <Select
+                        sele
                         value={props.selectedSource}
                         onChange={(e) => props.setSelectedSource(e.target.value)}
                         input={<Input id="age-simple" />}
                     >
+
                         {
                             props.sources && props.sources.map((source, i) => (
                                 <MenuItem key={i} value={source.id}>{source.name}</MenuItem>
