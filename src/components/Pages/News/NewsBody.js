@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { news_api_key, news_api_url } from "../../../config";
 import LoadingNews from './LoadingNews';
 import Article from './Article';
-
+import { FlexContainer } from "../../UI/Layouts";
 const NewsBody = (props) => {
     const [articles, setArticles] = useState(null);
     const [fetching, setFetching] = useState(true)
@@ -21,14 +21,14 @@ const NewsBody = (props) => {
             })
     }, [props.selectedSource])
     return (
-        <div>
+        <FlexContainer justifyContent='space-evenly'>
             {fetching && <LoadingNews />}
             {!fetching && articles && articles.map((article, i) => {
-                return (<div key={i}>
+                return (<div key={i} sty>
                     <Article article={article} />
                 </div>)
             })}
-        </div>
+        </FlexContainer>
     )
 }
 export default NewsBody
