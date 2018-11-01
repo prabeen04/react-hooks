@@ -21,15 +21,14 @@ const styles = theme => ({
 
 function NewsList(props) {
     const { classes } = props;
-    const [selectedSource, setSelectedSource] = useState('');
     return (
         <>
             <form className={classes.container}>
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="age-simple">Age</InputLabel>
                     <Select
-                        value={selectedSource}
-                        onChange={(e) => setSelectedSource(e.target.value)}
+                        value={props.selectedSource}
+                        onChange={(e) => props.setSelectedSource(e.target.value)}
                         input={<Input id="age-simple" />}
                     >
                         {

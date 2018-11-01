@@ -5,6 +5,7 @@ import { news_api_url } from '../../../config';
 
 function News() {
   const [sources, setSources] = useState([]);
+  const [selectedSource, setSelectedSource] = useState('')
   useEffect(() => {
     fetch(`${news_api_url}/sources`)
       .then(res => res.json())
@@ -16,8 +17,8 @@ function News() {
   }, [])
   return (
     <React.Fragment>
-      <NewsHeader sources={sources} />
-      <NewsBody />
+      <NewsHeader sources={sources} setSelectedSource={setSelectedSource}/>
+      <NewsBody selectedSource={selectedSource}/>
     </React.Fragment>
   )
 }
