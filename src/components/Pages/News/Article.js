@@ -34,7 +34,7 @@ const styles = theme => ({
 });
 
 const Article = (props) => {
-    const { classes } = props;
+    const { classes, article } = props;
 
     return (
         <Card className={classes.card}>
@@ -47,19 +47,16 @@ const Article = (props) => {
                         <MoreVertIcon />
                     </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
+                title={article.title}
+                subheader={article.author}
             />
             <CardMedia
                 className={classes.media}
-                image="/static/images/cards/paella.jpg"
+                image={article.urlToImage}
                 title="Paella dish"
             />
             <CardContent>
-                <Typography component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
-          </Typography>
+                <Typography component="p">{article.description}</Typography>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
                 <IconButton aria-label="Add to favorites">
