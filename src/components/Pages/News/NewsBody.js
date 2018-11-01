@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { news_api_key, news_api_url } from "../../../config";
 import LoadingNews from './LoadingNews';
+import Article from './Article';
 
 const NewsBody = (props) => {
     const [articles, setArticles] = useState(null);
@@ -18,12 +19,14 @@ const NewsBody = (props) => {
                 setFetching(false)
                 console.log(err)
             })
-    },[props.selectedSource])
+    }, [props.selectedSource])
     return (
         <div>
-            {fetching && <LoadingNews/>}
+            {fetching && <LoadingNews />}
             {!fetching && articles && articles.map((article, i) => {
-                return <h3 key={i}>{article.title}</h3>
+                return (<div key={i}>
+                    <Article article={article} />
+                </div>)
             })}
         </div>
     )
