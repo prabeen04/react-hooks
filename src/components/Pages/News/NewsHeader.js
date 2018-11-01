@@ -18,7 +18,7 @@ function NewsHeader(props) {
             >
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
-                    <NewsList sources={sources} />
+                    <NewsList sources={sources} setSelectedSource={props.setSelectedSource} />
                 </DialogContent>
             </Dialog>
         </>

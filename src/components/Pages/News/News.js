@@ -3,9 +3,10 @@ import NewsHeader from './NewsHeader';
 import NewsBody from './NewsBody';
 import { news_api_url } from '../../../config';
 
-function News() {
+function News(props) {
   const [sources, setSources] = useState([]);
   const [selectedSource, setSelectedSource] = useState('')
+
   useEffect(() => {
     fetch(`${news_api_url}/sources`)
       .then(res => res.json())
