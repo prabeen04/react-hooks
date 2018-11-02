@@ -29,6 +29,7 @@ const NewsBody = (props) => {
     return (
         <div>
             <Masonry
+                style={{ margin: '2rem'}}
                 className={'my-gallery-class'} // default ''
                 elementType={'div'} // default 'div'
                 options={masonryOptions} // default {}
@@ -38,7 +39,7 @@ const NewsBody = (props) => {
             >
                 {fetching && <LoadingNews />}
                 {!fetching && articles && articles.map((article, i) => {
-                    return (<div key={i}>
+                    return (<div key={i} style={{ margin: '0.4rem'}}>
                         <Article article={article} />
                     </div>)
                 })}
