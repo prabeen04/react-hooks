@@ -27,7 +27,7 @@ const NewsBody = (props) => {
             })
     }, [props.selectedSource])
     return (
-        <FlexContainer justifyContent='space-evenly'>
+        <div>
             <Masonry
                 className={'my-gallery-class'} // default ''
                 elementType={'div'} // default 'div'
@@ -43,7 +43,7 @@ const NewsBody = (props) => {
                     </div>)
                 })}
             </Masonry>
-        </FlexContainer>
+        </div>
     )
 }
 export default NewsBody
