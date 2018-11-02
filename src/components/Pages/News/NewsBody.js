@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { news_api_key, news_api_url } from "../../../config";
+import Masonry from 'react-masonry-component';
 import LoadingNews from './LoadingNews';
 import Article from './Article';
 import { FlexContainer } from "../../UI/Layouts";
@@ -23,12 +24,21 @@ const NewsBody = (props) => {
     }, [props.selectedSource])
     return (
         <FlexContainer justifyContent='space-evenly'>
-            {fetching && <LoadingNews />}
-            {!fetching && articles && articles.map((article, i) => {
-                return (<div key={i}>
-                    <Article article={article} />
-                </div>)
-            })}
+            <Masonry
+                // className={'my-gallery-class'} // default ''
+                // elementType={'ul'} // default 'div'
+                // options={masonryOptions} // default {}
+                // disableImagesLoaded={false} // default false
+                // updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                // imagesLoadedOptions={imagesLoadedOptions} // default {}
+            >
+                {fetching && <LoadingNews />}
+                {!fetching && articles && articles.map((article, i) => {
+                    return (<div key={i}>
+                        <Article article={article} />
+                    </div>)
+                })}
+            </Masonry>
         </FlexContainer>
     )
 }
