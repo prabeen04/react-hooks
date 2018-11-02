@@ -35,12 +35,12 @@ const styles = theme => ({
 
 const Article = (props) => {
     const { classes, article } = props;
-
+    const avatarLetter = (article.author && article.author.split('')[0]) || 'P';
     return (
         <Card className={classes.card}>
             <CardHeader
                 avatar={
-                    <Avatar aria-label="Recipe" className={classes.avatar}>R</Avatar>
+                    <Avatar aria-label="Recipe" className={classes.avatar}>{avatarLetter || 'P'}</Avatar>
                 }
                 action={
                     <IconButton>

@@ -3,6 +3,7 @@ import { news_api_key, news_api_url } from "../../../config";
 import LoadingNews from './LoadingNews';
 import Article from './Article';
 import { FlexContainer } from "../../UI/Layouts";
+
 const NewsBody = (props) => {
     const [articles, setArticles] = useState(null);
     const [fetching, setFetching] = useState(true)
@@ -24,7 +25,7 @@ const NewsBody = (props) => {
         <FlexContainer justifyContent='space-evenly'>
             {fetching && <LoadingNews />}
             {!fetching && articles && articles.map((article, i) => {
-                return (<div key={i} sty>
+                return (<div key={i}>
                     <Article article={article} />
                 </div>)
             })}
