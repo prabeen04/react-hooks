@@ -52,7 +52,7 @@ const Article = (props) => {
             />
             <CardMedia
                 className={classes.media}
-                image={article.urlToImage}
+                image={article.urlToImage || 'http://wiki.tripwireinteractive.com/images/4/47/Placeholder.png'}
                 title="Paella dish"
             />
             <CardContent>
