@@ -26,7 +26,8 @@ const NewsBody = (props) => {
             })
     }, [props.selectedSource])
     return (
-        <div>
+        <div style={{minHeight: '100vh', width: '100vw'}}> 
+            {fetching && <LoadingNews />}
             <Masonry
                 style={{ margin: '2rem'}}
                 className={'my-gallery-class'} // default ''
@@ -36,7 +37,6 @@ const NewsBody = (props) => {
                 updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
                 imagesLoadedOptions={imagesLoadedOptions} // default {}
             >
-                {fetching && <LoadingNews />}
                 {!fetching && articles && articles.map((article, i) => {
                     return (<div key={i} style={{ margin: '0.4rem'}}>
                         <Article article={article} />
