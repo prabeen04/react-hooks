@@ -3,7 +3,6 @@ import { news_api_key, news_api_url } from "../../../config";
 import Masonry from 'react-masonry-component';
 import LoadingNews from './LoadingNews';
 import Article from './Article';
-import { FlexContainer } from "../../UI/Layouts";
 const masonryOptions = {
     transitionDuration: 0
 };
