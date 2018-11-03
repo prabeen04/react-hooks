@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { news_api_key, news_api_url } from "../../../config";
 import Masonry from 'react-masonry-component';
-import LoadingNews from './LoadingNews';
+import LoadingNews from '../../UI/Placeholder/LoadingNews'
 import Article from './Article';
 const masonryOptions = {
     transitionDuration: 0

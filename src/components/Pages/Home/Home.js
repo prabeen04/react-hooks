@@ -4,7 +4,7 @@ import CounterHook from '../../CounterHook';
 import { FlexContainer } from "../../UI/Layouts";
 function Home() {
     return (
-        <div>
+        <div style={{ padding: '0.3rem' }}>
             <CounterHook />
             <FlexContainer style={{ justifyContent: 'space-evenly' }}>
                 <Unsplash url='https://source.unsplash.com/random/4000x2000' />
