@@ -29,7 +29,6 @@ function NewsList(props) {
                         value={props.selectedSource}
                         onChange={(e) =>{ 
                             props.setSelectedSource(e.target.value)
-                            props.handleModalOpen()
                         }}
                         input={<Input id="age-simple" />}
                     >
