@@ -8,16 +8,21 @@ import NewsList from './NewsList';
 function NewsHeader(props) {
     const { sources } = props;
     const [modalOpen, setModalOpen] = useState(false)
+    const handleModalOpen = () => setModalOpen(!modalOpen)
     return (
         <>
-            <Button onClick={() => setModalOpen(!modalOpen)}>Select News </Button>
+            <Button onClick={handleModalOpen}>Select News </Button>
             <Dialog
                 open={modalOpen}
-                onClose={() => setModalOpen(!modalOpen)}
+                onClose={handleModalOpen}
             >
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
-                    <NewsList sources={sources} setSelectedSource={props.setSelectedSource} />
+                    <NewsList
+                        sources={sources}
+                        setSelectedSource={props.setSelectedSource}j
+                        setModalOpen={handleModalOpen}
+                    />
                 </DialogContent>
             </Dialog>
         </>
