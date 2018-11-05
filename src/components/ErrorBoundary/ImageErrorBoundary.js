@@ -12,7 +12,7 @@ class ImageErrorBoundary extends Component {
 
     componentDidCatch(error, info) {
         // You can also log the error to an error reporting service
-        logErrorToMyService(error, info);
+        // logErrorToMyService(error, info);
     }
     render() {
         if (this.state.hasError) {
