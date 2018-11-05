@@ -15,11 +15,12 @@ class ImageErrorBoundary extends Component {
         logErrorToMyService(error, info);
     }
     render() {
-        return (
-            <div>
+        if (this.state.hasError) {
+            // You can render any custom fallback UI
+            return <h1>Something went wrong.</h1>;
+        }
 
-            </div>
-        )
+        return this.props.children;
     }
 }
 
