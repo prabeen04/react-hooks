@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import ImageErrorBoundary from '../../ErrorBoundary/ImageErrorBoundary';
 
 import Image from '../../Utils/Image';
 
@@ -23,30 +24,32 @@ function Unsplash(props) {
   const { classes, url } = props;
   return (
     <div>
-      <Card className={classes.card}>
-        <CardActionArea>
-          <CardMedia
-            component={() => <Image url={url} />}
-          />
-          <CardContent>
-            <h3>
-              Lizard
+      <ImageErrorBoundary>
+        <Card className={classes.card}>
+          <CardActionArea>
+            <CardMedia
+              component={() => <Image url={url} />}
+            />
+            <CardContent>
+              <h3>
+                Lizard
           </h3>
-            <h3>
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+              <h3>
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                across all continents except Antarctica
           </h3>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              Share
         </Button>
-          <Button size="small" color="primary">
-            Learn More
+            <Button size="small" color="primary">
+              Learn More
         </Button>
-        </CardActions>
-      </Card>
+          </CardActions>
+        </Card>
+      </ImageErrorBoundary>
     </div>
   )
 }
