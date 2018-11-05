@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 
 class ImageErrorBoundary extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
+
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
+    }
 }
 
 export default ImageErrorBoundary;
