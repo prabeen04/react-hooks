@@ -20,7 +20,7 @@ function NewsHeader(props) {
                 <DialogContent>
                     <NewsList
                         sources={sources}
-                        setSelectedSource={props.setSelectedSource}j
+                        setSelectedSource={props.setSelectedSource}
                         setModalOpen={handleModalOpen}
                     />
                 </DialogContent>
