@@ -3,6 +3,8 @@ import { news_api_key, news_api_url } from "../../../config";
 import Masonry from 'react-masonry-component';
 import LoadingNews from '../../UI/Placeholder/LoadingNews'
 import Article from './Article';
+import NewsListContext from '../../../context/NewsListContext';
+
 const masonryOptions = {
     transitionDuration: 0
 };
@@ -26,10 +28,13 @@ const NewsBody = (props) => {
             })
     }, [props.selectedSource])
     return (
-        <div style={{minHeight: '100vh', width: '100vw'}}> 
+        <div style={{ minHeight: '100vh', width: '100vw' }}>
+            <NewsListContext.Consumer>
+                {(context) => <p>{context.value}</p>}
+            </NewsListContext.Consumer>
             {fetching && <LoadingNews />}
             <Masonry
-                style={{ margin: '2rem'}}
+                style={{ margin: '2rem' }}
                 className={'my-gallery-class'} // default ''
                 elementType={'div'} // default 'div'
                 options={masonryOptions} // default {}
@@ -38,7 +43,7 @@ const NewsBody = (props) => {
                 imagesLoadedOptions={imagesLoadedOptions} // default {}
             >
                 {!fetching && articles && articles.map((article, i) => {
-                    return (<div key={i} style={{ margin: '0.4rem'}}>
+                    return (<div key={i} style={{ margin: '0.4rem' }}>
                         <Article article={article} />
                     </div>)
                 })}
