@@ -16,16 +16,16 @@ const NewsBody = (props) => {
     useEffect(() => {
         setFetching(true)
         fetch(`${news_api_url}articles?source=${props.selectedSource}&sortBy=top&apiKey=${news_api_key}`)
-            .then(res => res.json())
-            .then(res => {
-                setFetching(false)
-                console.log(res)
-                setArticles(res.articles)
-            })
-            .catch(err => {
-                setFetching(false)
-                console.log(err)
-            })
+        .then(res => res.json())
+        .then(res => {
+            setFetching(false)
+            console.log(res)
+            setArticles(res.articles)
+        })
+        .catch(err => {
+            setFetching(false)
+            console.log(err)
+        })
     }, [props.selectedSource])
     return (
         <div style={{ minHeight: '100vh', width: '100vw' }}>
