@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { FlexContainer } from "../UI/Layouts";
 class NewsErrorBoundary extends Component {
     constructor(props) {
         super(props);
@@ -16,8 +16,9 @@ class NewsErrorBoundary extends Component {
     }
     render() {
         if (this.state.hasError) {
-            // You can render any custom fallback UI
-            return <h1>Something went wrong in News</h1>;
+            return (<FlexContainer justifyContent='center' alignItems='center'>
+                <h3>Something went wrong in News</h3>
+            </FlexContainer>);
         }
 
         return this.props.children;
