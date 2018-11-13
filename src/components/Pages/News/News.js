@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NewsHeader from './NewsHeader';
 import NewsBody from './NewsBody';
 import { news_api_url } from '../../../config';
-
+import NewsErrorBoundary from "../../ErrorBoundary/NewsErrorBoundary";
 function News(props) {
   const [sources, setSources] = useState([]);
   const [selectedSource, setSelectedSource] = useState('buzzfeed')
@@ -18,8 +18,10 @@ function News(props) {
   }, [])
   return (
     <React.Fragment>
-      <NewsHeader sources={sources} setSelectedSource={setSelectedSource}/>
-      <NewsBody selectedSource={selectedSource}/>
+      <NewsErrorBoundary>
+        <NewsHeader sources={sources} setSelectedSource={setSelectedSource} />
+        <NewsBody selectedSource={selectedSource} />
+      </NewsErrorBoundary>
     </React.Fragment>
   )
 }
