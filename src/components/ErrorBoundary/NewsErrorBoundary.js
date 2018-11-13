@@ -16,9 +16,13 @@ class NewsErrorBoundary extends Component {
     }
     render() {
         if (this.state.hasError) {
-            return (<FlexContainer justifyContent='center' alignItems='center'>
-                <h3>Something went wrong in News</h3>
-            </FlexContainer>);
+            return (
+                <div style={{ height: '600px', backgroundColor: '#f4f4f4' }}>
+                    <FlexContainer justifyContent='center' alignItems='center'>
+                        <h3>Something went wrong in News</h3>
+                    </FlexContainer>
+                </div>
+            );
         }
 
         return this.props.children;
