@@ -3,7 +3,6 @@ import { news_api_key, news_api_url } from "../../../config";
 import Masonry from 'react-masonry-component';
 import LoadingNews from '../../UI/Placeholder/LoadingNews'
 import Article from './Article';
-import NewsContext from '../../../context/NewsListContext';
 
 const masonryOptions = {
     transitionDuration: 0
@@ -29,9 +28,6 @@ const NewsBody = (props) => {
     }, [props.selectedSource])
     return (
         <div style={{ minHeight: '100vh', width: '100vw' }}>
-            <NewsContext.Consumer>
-                {(context) => <p>{context.value}</p>}
-            </NewsContext.Consumer>
             {fetching && <LoadingNews />}
             <Masonry
                 style={{ margin: '2rem' }}
