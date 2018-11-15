@@ -9,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 const styles = {
     list: {
@@ -37,6 +38,12 @@ class NavDrawer extends React.Component {
                         <ListItem button>
                             <ListItemIcon><MailIcon /></ListItemIcon>
                             <ListItemText primary='News' />
+                        </ListItem>
+                    </Link>
+                    <Link to='/todo'>
+                        <ListItem button>
+                            <ListItemIcon><AssignmentIcon /></ListItemIcon>
+                            <ListItemText primary='Todo' />
                         </ListItem>
                     </Link>
                 </List>
