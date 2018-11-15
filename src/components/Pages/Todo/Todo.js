@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{ useState } from 'react'
 
 const Todo = () => {
+const [todo, setsTodo ] = useState('code')
   return (
-    <div>
-      
-    </div>
+    <>
+      <h3>{todo}</h3>
+    </>
   )
 }
 
