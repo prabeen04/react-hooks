@@ -3,7 +3,7 @@ import React, { lazy, Suspense, useState } from 'react'
 const TodoList = lazy(() => import('./TodoList'));
 
 const Todo = () => {
-  const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false }])
+  const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false },{ todo: 'code again', isCompleted: true }])
   return (
     <>
       <h3>Todo's</h3>
