@@ -3,10 +3,10 @@ import React, { lazy, Suspense, useState } from 'react'
 const TodoList = lazy(() => import('./TodoList'));
 
 const Todo = () => {
-  const [todo, setsTodo] = useState('code')
+  const [todos, setsTodos] = useState([{todo: 'code', iscompleted: false}])
   return (
     <>
-      <h3>{todo}</h3>
+      <h3>Todo's</h3>
       <TodoList />
     </>
   )
