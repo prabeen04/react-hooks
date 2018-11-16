@@ -16,10 +16,26 @@ const styles = theme => ({
   },
 });
 
-const TodoList = () => {
+const TodoList = ({todos, classes}) => {
   return (
     <>
       <h2>Todo List</h2>
+      <div className={classes.root}>
+        <List dense>
+          {todos.map(todo => (
+            <ListItem key={todo} button>
+              <Avatar alt="Remy Sharp" src="https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png" />
+              <ListItemText primary={`Line item ${`todo + 1`}`} />
+              <ListItemSecondaryAction>
+                <Checkbox
+                  // onChange={this.handleToggle(`todo`)}
+                  checked={todo.isCompleted}
+                />
+              </ListItemSecondaryAction>
+            </ListItem>
+          ))}
+        </List>
+      </div>
     </>
   )
 }
