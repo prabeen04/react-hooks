@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useState } from 'react'
 
 const TodoList = lazy(() => import('./TodoList'));
+const TodoForm = lazy(() => import('./TodoForm'));
 
 const Todo = () => {
   const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false }, { todo: 'code again', isCompleted: true }])
@@ -10,6 +11,7 @@ const Todo = () => {
   }
   return (
     <>
+      <TodoForm />
       <TodoList todos={todos} />
     </>
   )

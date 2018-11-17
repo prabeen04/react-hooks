@@ -18,13 +18,14 @@ const styles = theme => ({
         width: 200,
     },
 });
-const TodoForm = () => {
+const TodoForm = (props) => {
+    const { classes } = props;
     const [todo, setTodo] = useState('')
     return (
         <>
             <TextField
                 id="outlined-name"
-                label="Name"
+                label="Todo"
                 className={classes.textField}
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
