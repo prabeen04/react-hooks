@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -19,14 +19,14 @@ const styles = theme => ({
     },
 });
 const TodoForm = () => {
-    
+    const [ todo, setTodo ] = useState('')
     return (
         <>
             <TextField
                 id="outlined-name"
                 label="Name"
                 className={classes.textField}
-                value={this.state.name}
+                value={todo}
                 onChange={this.handleChange('name')}
                 margin="normal"
                 variant="outlined"
