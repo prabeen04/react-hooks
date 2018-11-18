@@ -13,10 +13,11 @@ const Todo = () => {
     console.log(todo)
     setsTodos([...todos, {todo, isCompleted: false}])
   }
+  
   return (
     <>
       <TodoForm addTodo={addTodo}/>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} toggleTodo={toggleTodo}/>
     </>
   )
 }

@@ -16,7 +16,7 @@ const styles = theme => ({
   },
 });
 
-const TodoList = ({todos, classes}) => {
+const TodoList = ({todos, classes,toggleTodo }) => {
   return (
     <>
       <div className={classes.root}>
@@ -27,7 +27,7 @@ const TodoList = ({todos, classes}) => {
               <ListItemText primary={` ${todo.todo}`} />
               <ListItemSecondaryAction>
                 <Checkbox
-                  // onChange={this.handleToggle(`todo`)}
+                  onChange={toggleTodo(todo.isCompleted)}
                   checked={todo.isCompleted}
                 />
               </ListItemSecondaryAction>
