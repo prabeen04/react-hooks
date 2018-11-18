@@ -26,7 +26,11 @@ const styles = theme => ({
 });
 const TodoForm = (props) => {
     const { classes } = props;
-    const [todo, setTodo] = useState('')
+    const [todo, setTodo] = useState('');
+    const handleAddTodo = () => {
+        props.addTodo(todo)
+        setTodo('')
+    }
     return (
         <>
             <FlexContainer alignItems='center'>
@@ -40,9 +44,14 @@ const TodoForm = (props) => {
                     fullWidth
                     variant="outlined"
                 />
-                <Button variant="contained" color="primary" className={classes.button}>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    onClick={handleAddTodo}
+                >
                     Primary
-            </Button>
+                </Button>
             </FlexContainer>
         </>
     )
