@@ -38,7 +38,7 @@ const TodoForm = (props) => {
                     onChange={(e) => setTodo(e.target.value)}
                     margin="normal"
                     fullWidth
-                    // variant="outlined"
+                    variant="outlined"
                 />
                 <Button variant="contained" color="primary" className={classes.button}>
                     Primary

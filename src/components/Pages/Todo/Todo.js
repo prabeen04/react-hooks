@@ -9,9 +9,12 @@ const Todo = () => {
     const newTodos = [...todos];
       return newTodos.splice(index, 1)
   }
+  const addTodo = (todo) => {
+    console.log(todo)
+  }
   return (
     <>
-      <TodoForm />
+      <TodoForm addTodo={addTodo}/>
       <TodoList todos={todos} />
     </>
   )
