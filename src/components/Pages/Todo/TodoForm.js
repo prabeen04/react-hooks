@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 const styles = theme => ({
     container: {
         display: 'flex',
@@ -16,6 +17,9 @@ const styles = theme => ({
     },
     menu: {
         width: 200,
+    },
+    button: {
+        margin: theme.spacing.unit,
     },
 });
 const TodoForm = (props) => {
@@ -32,6 +36,9 @@ const TodoForm = (props) => {
                 margin="normal"
                 variant="outlined"
             />
+            <Button variant="contained" color="primary" className={classes.button}>
+                Primary
+            </Button>
         </>
     )
 }
