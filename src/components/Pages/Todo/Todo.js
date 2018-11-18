@@ -11,6 +11,7 @@ const Todo = () => {
   }
   const addTodo = (todo) => {
     console.log(todo)
+    setsTodos([...todos, {todo, isCompleted: false}])
   }
   return (
     <>
