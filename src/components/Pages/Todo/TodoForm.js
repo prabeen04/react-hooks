@@ -50,7 +50,7 @@ const TodoForm = (props) => {
                     className={classes.button}
                     onClick={handleAddTodo}
                 >
-                    Primary
+                    Create Todo
                 </Button>
             </FlexContainer>
         </>

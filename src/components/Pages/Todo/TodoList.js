@@ -27,7 +27,7 @@ const TodoList = ({todos, classes,toggleTodo }) => {
               <ListItemText primary={` ${todo.todo}`} />
               <ListItemSecondaryAction>
                 <Checkbox
-                  onChange={toggleTodo(todo.isCompleted)}
+                  onChange={toggleTodo(todo)}
                   checked={todo.isCompleted}
                 />
               </ListItemSecondaryAction>
