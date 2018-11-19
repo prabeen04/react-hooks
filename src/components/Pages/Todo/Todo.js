@@ -7,17 +7,17 @@ const Todo = () => {
   const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false }, { todo: 'code again', isCompleted: false }])
   const toggleTodo = (todo, index) => {
     const newTodos = [...todos];
-      return [...newTodos.splice(index, 1), {...todo, isCompleted: true}]
+    return [...newTodos.splice(index, 1), { ...todo, isCompleted: true }, ...newTodos.splice(index + 1)]
   }
   const addTodo = (todo) => {
     console.log(todo)
-    setsTodos([...todos, {todo, isCompleted: false}])
+    setsTodos([...todos, { todo, isCompleted: false }])
   }
-  
+
   return (
     <>
-      <TodoForm addTodo={addTodo}/>
-      <TodoList todos={todos} toggleTodo={toggleTodo}/>
+      <TodoForm addTodo={addTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
     </>
   )
 }
