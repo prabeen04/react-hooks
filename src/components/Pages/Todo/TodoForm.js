@@ -34,25 +34,29 @@ const TodoForm = (props) => {
     return (
         <>
             <FlexContainer alignItems='center'>
-                <TextField
-                    id="outlined-name"
-                    label="Todo"
-                    className={classes.textField}
-                    value={todo}
-                    onChange={(e) => setTodo(e.target.value)}
-                    margin="normal"
-                    fullWidth
-                    variant="outlined"
-                />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                    onClick={handleAddTodo}
-                    disabled={!todo}
-                >
-                    Create Todo
+                <form>
+
+                    <TextField
+                        id="outlined-name"
+                        label="Todo"
+                        className={classes.textField}
+                        value={todo}
+                        onChange={(e) => setTodo(e.target.value)}
+                        margin="normal"
+                        fullWidth
+                        variant="outlined"
+                    />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        className={classes.button}
+                        onClick={handleAddTodo}
+                        disabled={!todo}
+                        type='submit'
+                    >
+                        Create Todo
                 </Button>
+                </form>
             </FlexContainer>
         </>
     )
