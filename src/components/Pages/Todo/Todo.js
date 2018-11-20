@@ -8,7 +8,7 @@ const Todo = () => {
   const toggleTodo = (todo, index) => {
     console.log(todo, index)
     const newTodos = [...todos];
-    return [...newTodos.splice(index, 1), { ...todo, isCompleted: !todo.isCompleted }, ...newTodos.splice(index + 1)]
+    return [...newTodos.splice(index, 1), { ...todo, isCompleted: true }]
   }
   const addTodo = (todo) => {
     console.log(todo)
