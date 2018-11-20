@@ -49,6 +49,7 @@ const TodoForm = (props) => {
                     color="primary"
                     className={classes.button}
                     onClick={handleAddTodo}
+                    disabled={!todo}
                 >
                     Create Todo
                 </Button>
