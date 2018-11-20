@@ -7,8 +7,6 @@ const Todo = () => {
   const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false }, { todo: 'code again', isCompleted: false }])
   const toggleTodo = (todo, index) => {
     console.log(todo, index)
-    const newTodos = [...todos];
-    return [...newTodos.splice(index, 1), { ...todo, isCompleted: true }]
   }
   const addTodo = (todo) => {
     console.log(todo)
