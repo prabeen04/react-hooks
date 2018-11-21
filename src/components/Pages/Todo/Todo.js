@@ -6,7 +6,8 @@ const TodoForm = lazy(() => import('./TodoForm'));
 const Todo = () => {
   const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false }, { todo: 'code again', isCompleted: false }])
   const toggleTodo = (todo, index) => {
-    console.log(todo, index)
+    const newTodos = [...todos]
+    newTodos[index].isCompleted = !newTodos[index].isCompleted
   }
   const addTodo = (todo) => {
     console.log(todo)
