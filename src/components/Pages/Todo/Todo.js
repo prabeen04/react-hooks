@@ -17,8 +17,11 @@ const Todo = () => {
 
   return (
     <>
-      <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <TodoForm
+        addTodo={addTodo} />
+      <TodoList
+        todos={todos}
+        toggleTodo={toggleTodo} />
     </>
   )
 }

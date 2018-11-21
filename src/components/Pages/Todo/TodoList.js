@@ -22,7 +22,7 @@ const TodoList = ({todos, classes, toggleTodo }) => {
       <div className={classes.root}>
         <List dense>
           {todos.map((todo, index) => (
-            <ListItem key={todo} button>
+            <ListItem key={index} button>
               <Avatar alt="Remy Sharp" src="https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png" />
               <ListItemText primary={` ${todo.todo}`} />
               <ListItemSecondaryAction>
