@@ -17,6 +17,7 @@ const styles = theme => ({
 });
 
 const TodoList = ({todos, classes, toggleTodo }) => {
+  console.log(todos)
   return (
     <>
       <div className={classes.root}>
