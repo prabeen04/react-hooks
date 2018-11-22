@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Download = () => {
     useEffect(() => {
-        fetch(`${news_api_url}/sources`)
+        fetch(`http://192.168.1.61:8000/employeeList`)
             .then(res => res.json())
             .then(res => {
                 console.log(res)
@@ -12,7 +12,7 @@ const Download = () => {
     
     return (
         <div>
-
+            <h1>Download Component</h1>
         </div>
     )
 }
