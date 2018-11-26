@@ -49,7 +49,7 @@ class NavDrawer extends React.Component {
                     <Link to='/context'>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
-                            <ListItemText primary='COntext' />
+                            <ListItemText primary='Context' />
                         </ListItem>
                     </Link>
                 </List>

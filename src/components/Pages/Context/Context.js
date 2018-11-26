@@ -1,9 +1,13 @@
-import React, { useState} from 'react'
+import React, { createContext } from 'react'
+
+const TimeContext = createContext(Date.now())
 
 const Context = (props) => {
   return (
     <>
-      <h3>Context Component</h3>
+        <TimeContext.Provider value={time: 'now'}>      
+            <h3>Context Component</h3>
+        </TimeContext.Provider>
     </>
   )
 }
