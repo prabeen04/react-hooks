@@ -7,6 +7,7 @@ import './App.css';
 const Home = lazy(() => import('./components/Pages/Home/Home'))
 const News = lazy(() => import('./components/Pages/News/News'))
 const Todo = lazy(() => import('./components/Pages/Todo/Todo'))
+const Context = lazy(() => import('./components/Pages/Context/Context'))
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
               <Route exact path="/" component={() => <Home />} />
               <Route exact path="/news" component={() => <News />} />
               <Route exact path="/todo" component={() => <Todo />} />
+              <Route exact path="/context" component={() => <Context />} />
             </Switch>
           </Suspense>
         </ApplicationWrapper>
