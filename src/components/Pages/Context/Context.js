@@ -1,13 +1,13 @@
 import React, { createContext } from 'react'
-
-const TimeContext = createContext(Date.now())
+import moment from 'moment';
+const TimeContext = createContext(moment())
 
 const Context = (props) => {
     return (
         <>
-            <TimeContext.Provider value={{time: Date.now().toString()}}>
+            <TimeContext.Provider value={{time: moment()}}>
             <TimeContext.Consumer>
-                {(props) => <h2>{props.time}</h2>}
+                {(props) => <pre>{props.time}</pre>}
             </TimeContext.Consumer>
             <h3>Context Component</h3>
         </TimeContext.Provider>
