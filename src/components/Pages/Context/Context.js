@@ -5,7 +5,7 @@ const TimeContext = createContext(moment())
 const Context = (props) => {
     return (
         <>
-            <TimeContext.Provider value={{time: moment()}}>
+            <TimeContext.Provider value={{time: moment().toLocaleString()}}>
             <TimeContext.Consumer>
                 {(props) => <pre>{props.time}</pre>}
             </TimeContext.Consumer>
