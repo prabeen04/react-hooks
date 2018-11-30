@@ -1,6 +1,6 @@
 import React, { Context } from 'react'
+import { TimeContext } from "./Context";
 const Consumer = (props) => {
-    static contextType = TimeContext;
 return (
     <div>
         <h1>Consumer component</h1>

@@ -2,7 +2,7 @@ import React, { createContext } from 'react'
 import moment from 'moment';
 
 import Consumer from './Consumer';
-const TimeContext = createContext(moment())
+export const TimeContext = createContext(moment())
 
 const Context = (props) => {
     return (
