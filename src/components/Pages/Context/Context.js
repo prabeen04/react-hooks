@@ -8,9 +8,6 @@ const Context = (props) => {
     return (
         <>
             <TimeContext.Provider value={{ time: moment().toLocaleString() }}>
-                <TimeContext.Consumer>
-                    {(props) => <pre>{props.time}</pre>}
-                </TimeContext.Consumer>
                 <h3>Context Component</h3>
                 <Consumer />
             </TimeContext.Provider>
