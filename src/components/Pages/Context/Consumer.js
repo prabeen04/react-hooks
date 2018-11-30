@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Consumer() {
+const Consumer = (props) => {
   return (
     <div>
-      
+      <h1>Consumer component</h1>
     </div>
   )
 }
+
+export default Consumer;
