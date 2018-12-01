@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { TimeContext } from "./TimeContext";
 const Consumer = (props) => {
-    const TimeContext = useContext(TimeContext);
     return (
         <div>
             <h1>Consumer component</h1>
