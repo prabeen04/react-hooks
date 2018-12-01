@@ -1,5 +1,5 @@
 import React, { Context } from 'react'
-import { TimeContext } from "./Context";
+import { TimeContext } from "./TimeContext";
 const Consumer = (props) => {
 return (
     <div>
