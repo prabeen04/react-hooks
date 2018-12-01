@@ -1,8 +1,7 @@
 import React, { createContext } from 'react'
 import moment from 'moment';
-
+import { TimeContext } from './TimeContext';
 import Consumer from './Consumer';
-export const TimeContext = createContext(moment())
 
 const Context = (props) => {
     return (
