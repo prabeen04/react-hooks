@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useState, useContext } from 'react'
-import { TimeContext } from "../Context/TimeContext";
 import Typography from '@material-ui/core/Typography';
+import moment from 'moment';
+import { TimeContext } from "../Context/TimeContext";
 
 const TodoList = lazy(() => import('./TodoList'));
 const TodoForm = lazy(() => import('./TodoForm'));
@@ -21,8 +22,8 @@ console.log(timeContext)
 
   return (
     <>
-    <Typography variant='display3'>
-      {timeContext.time}
+    <Typography variant='headline'>
+      {moment(timeContext.time).toString()}
     </Typography>
       <TodoForm
         addTodo={addTodo} />
