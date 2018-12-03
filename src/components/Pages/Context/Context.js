@@ -4,17 +4,16 @@ import { TimeContext } from './TimeContext';
 import Consumer from './Consumer';
 
 const Context = (props) => {
-    const [time, setTime ] = useState({ time: moment().toLocaleString() })
+    const [time, setTime ] = useState({ time: moment().format('MMMM Do YYYY, h:mm:ss a') })
     useEffect(() => {
         console.log(time)
         setTimeout(() => {
-            setTime({time: moment().toLocaleString()})
+            setTime({time: moment().format('MMMM Do YYYY, h:mm:ss a')})
         }, 1000)
     })
     return (
         <>
             <TimeContext.Provider value={time}>
-                <h3>Context Component</h3>
                 <Consumer />
             </TimeContext.Provider>
         </>
