@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import Typography from "@material-ui/core/Typography";
 import { TimeContext } from "./TimeContext";
 const Consumer = (props) => {
     const timeContext = useContext(TimeContext);
     return (
         <div>
-            <h1>{timeContext.time}</h1>
+            <Typography variant='headline'>{timeContext.time}</Typography>
         </div>
     )
 }
