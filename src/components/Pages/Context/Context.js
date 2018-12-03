@@ -7,6 +7,9 @@ const Context = (props) => {
     const [time, setTime ] = useState({ time: moment().toLocaleString() })
     useEffect(() => {
         console.log(time)
+        setTimeout(() => {
+            setTime({time: moment().toLocaleString()})
+        }, 1000)
     })
     return (
         <>
