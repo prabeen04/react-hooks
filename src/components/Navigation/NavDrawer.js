@@ -52,6 +52,12 @@ class NavDrawer extends React.Component {
                             <ListItemText primary='Context' />
                         </ListItem>
                     </Link>
+                    <Link to='/reducer'>
+                        <ListItem button>
+                            <ListItemIcon><InboxIcon /></ListItemIcon>
+                            <ListItemText primary='Reducer' />
+                        </ListItem>
+                    </Link>
                 </List>
             </div>
         );
