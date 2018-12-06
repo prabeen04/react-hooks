@@ -10,25 +10,23 @@ const Todo = lazy(() => import('./components/Pages/Todo/Todo'))
 const Context = lazy(() => import('./components/Pages/Context/Context'))
 const Reducer = lazy(() => import('./components/Pages/Reducer/Reducer'))
 
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <ApplicationWrapper>
-          <Navbar />
-          <Suspense fallback={<div>Loading ...</div>}>
-            <Switch>
-              <Route exact path="/" component={() => <Home />} />
-              <Route exact path="/news" component={() => <News />} />
-              <Route exact path="/todo" component={() => <Todo />} />
-              <Route exact path="/context" component={() => <Context />} />
-              <Route exact path="/reducer" component={() => <Reducer />} />
-            </Switch>
-          </Suspense>
-        </ApplicationWrapper>
-      </React.Fragment>
-    );
-  }
+const App = (props) => {
+  return (
+    <React.Fragment>
+      <ApplicationWrapper>
+        <Navbar />
+        <Suspense fallback={<div>Loading ...</div>}>
+          <Switch>
+            <Route exact path="/" component={() => <Home />} />
+            <Route exact path="/news" component={() => <News />} />
+            <Route exact path="/todo" component={() => <Todo />} />
+            <Route exact path="/context" component={() => <Context />} />
+            <Route exact path="/reducer" component={() => <Reducer />} />
+          </Switch>
+        </Suspense>
+      </ApplicationWrapper>
+    </React.Fragment>
+  );
 }
 
 export default App;
