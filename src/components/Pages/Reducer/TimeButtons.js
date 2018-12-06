@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import NavigationIcon from '@material-ui/icons/Navigation'
 
 const styles = theme => ({
@@ -26,10 +27,12 @@ function TimeButton(props) {
     return (
         <>
             <Button variant="contained" color="primary" className={classes.button}>
-                <DeleteIcon className={classes.rightIcon} />
-                Increase Time
+                <AddIcon className={classes.leftIcon} />Increase Time
             </Button>
-            <Button variant="contained" color="secondary" className={classes.button}>Decrease Time</Button>
+            <Button variant="contained" color="secondary" className={classes.button}>
+                <RemoveIcon className={classes.leftIcon} />
+            Decrease Time
+            </Button>
         </>
     );
 }
