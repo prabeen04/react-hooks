@@ -8,7 +8,7 @@ const Reducer = () => {
   const [state, dispatch] = useReducer(appReducer, { time: moment() })
   return (
     <>
-      <h2>Reducer component</h2>
+      <Typography variant='display3'>Toggle Time</Typography>
       <Typography variant='display1'>
         {moment(state.time).toString()}
       </Typography>
