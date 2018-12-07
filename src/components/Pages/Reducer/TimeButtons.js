@@ -23,15 +23,15 @@ const styles = theme => ({
 });
 
 function TimeButton(props) {
-    const { classes, dispatch } = props;
+    const { classes, dispatch, time } = props;
     return (
         <>
             <Button variant="contained" color="primary" className={classes.button}
-                onClick={() => dispatch({ type: 'INCREASE_TIME' })}>
+                onClick={() => dispatch({ type: 'INCREASE_TIME', payload: time })}>
                 <AddIcon className={classes.leftIcon} />Increase Time
             </Button>
             <Button variant="contained" color="secondary" className={classes.button}
-                onClick={() => dispatch({ type: 'DECREASE_TIME' })}>
+                onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
                 <RemoveIcon className={classes.leftIcon} />
                 Decrease Time
             </Button>
