@@ -8,6 +8,7 @@ const appReducer = (state, action) => {
     case 'INCREASE_TIME':
       return { ...state, time: moment(action.payload).add(4, 'week') }
     case 'DECREASE_TIME':
+    return { ...state, time: moment(action.payload).subtract(4, 'week') }
     default:
       return { ...state }
   }
