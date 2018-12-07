@@ -28,12 +28,12 @@ function TimeButton(props) {
         <>
             <Button variant="contained" color="primary" className={classes.button}
                 onClick={() => dispatch({ type: 'INCREASE_TIME', payload: time })}>
-                <AddIcon className={classes.leftIcon} />Increase Time
+                <AddIcon className={classes.leftIcon} />Increase Month
             </Button>
             <Button variant="contained" color="secondary" className={classes.button}
                 onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
                 <RemoveIcon className={classes.leftIcon} />
-                Decrease Time
+                Decrease Month
             </Button>
         </>
     );
