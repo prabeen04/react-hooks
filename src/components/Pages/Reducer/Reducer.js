@@ -7,6 +7,11 @@ const appReducer = (state, action) => {
   switch (action.type) {
     case 'INCREASE_TIME':
       console.log('INCREASE_TIME')
+      return { ...state, moment.}
+    case 'DECREASE_TIME':
+      console.log('DECREASE_TIME')
+    default:
+      return { ...state }
   }
   return state;
 }
@@ -18,7 +23,7 @@ const Reducer = () => {
       <Typography variant='display1'>
         {moment(state.time).toString()}
       </Typography>
-      <TimeButton dispatch={dispatch} />
+      <TimeButton dispatch={dispatch} time={state.time}/>
     </>
   )
 }
