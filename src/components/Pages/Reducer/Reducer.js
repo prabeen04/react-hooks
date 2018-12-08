@@ -15,14 +15,14 @@ const appReducer = (state, action) => {
   return state;
 }
 const Reducer = () => {
-  const [state, dispatch] = useReducer(appReducer, { time: moment() })
+  const [state, dispatch] = useReducer(appReducer, { time: moment(), viewType: 'week' })
   return (
     <>
       <Typography variant='display3'>Toggle Time</Typography>
       <Typography variant='display1'>
         {moment(state.time).toString()}
       </Typography>
-      <TimeButton dispatch={dispatch} time={state.time} />
+      <TimeButton dispatch={dispatch} time={state.time} viewType={state.viewType}/>
     </>
   )
 }
