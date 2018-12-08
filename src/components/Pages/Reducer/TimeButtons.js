@@ -27,6 +27,22 @@ function TimeButton(props) {
     return (
         <>
             <FlexContainer>
+                <Button variant="contained" color="default" className={classes.button}
+                    onClick={() => dispatch({ type: 'INCREASE_TIME', payload: time })}>
+                    <AddIcon className={classes.leftIcon} />Day
+                </Button>
+                <Button variant="contained" color="primary" className={classes.button}
+                    onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
+                    <RemoveIcon className={classes.leftIcon} />
+                    Week
+                </Button>
+                <Button variant="contained" color="secondary" className={classes.button}
+                    onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
+                    <RemoveIcon className={classes.leftIcon} />
+                    Month
+                </Button>
+            </FlexContainer>
+            <FlexContainer>
                 <Button variant="contained" color="primary" className={classes.button}
                     onClick={() => dispatch({ type: 'INCREASE_TIME', payload: time })}>
                     <AddIcon className={classes.leftIcon} />{`Increase ${viewType}`}
@@ -37,7 +53,6 @@ function TimeButton(props) {
                     {`Decrease ${viewType}`}
                 </Button>
             </FlexContainer>
-            <FlexContainer></FlexContainer>
         </>
     );
 }
