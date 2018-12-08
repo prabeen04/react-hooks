@@ -33,7 +33,7 @@ function TimeButton(props) {
             <Button variant="contained" color="secondary" className={classes.button}
                 onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
                 <RemoveIcon className={classes.leftIcon} />
-                {`Decrease ${viewtype}`}
+                {`Decrease ${viewType}`}
             </Button>
         </>
     );
