@@ -6,9 +6,9 @@ import TimeButton from './TimeButtons';
 const appReducer = (state, action) => {
   switch (action.type) {
     case 'INCREASE_TIME':
-      return { ...state, time: moment(action.payload).add(1, 'month') }
+      return { ...state, time: moment(action.payload).add(1, state.viewType) }
     case 'DECREASE_TIME':
-    return { ...state, time: moment(action.payload).subtract(1, 'month') }
+    return { ...state, time: moment(action.payload).subtract(1, state.viewType) }
     default:
       return { ...state }
   }
