@@ -8,7 +8,9 @@ const appReducer = (state, action) => {
     case 'INCREASE_TIME':
       return { ...state, time: moment(action.payload).add(1, state.viewType) }
     case 'DECREASE_TIME':
-    return { ...state, time: moment(action.payload).subtract(1, state.viewType) }
+      return { ...state, time: moment(action.payload).subtract(1, state.viewType) }
+    case 'CHANGE_VIEW_TYPE':
+      return { ...state, viewType: action.payload }
     default:
       return { ...state }
   }
@@ -22,7 +24,7 @@ const Reducer = () => {
       <Typography variant='display1'>
         {moment(state.time).toString()}
       </Typography>
-      <TimeButton dispatch={dispatch} time={state.time} viewType={state.viewType}/>
+      <TimeButton dispatch={dispatch} time={state.time} viewType={state.viewType} />
     </>
   )
 }
