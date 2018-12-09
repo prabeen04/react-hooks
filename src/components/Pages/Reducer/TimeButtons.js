@@ -28,15 +28,15 @@ function TimeButton(props) {
         <>
             <FlexContainer>
                 <Button variant="contained" color="default" className={classes.button}
-                    onClick={() => dispatch({ type: 'INCREASE_TIME', payload: time })}>
+                    onClick={() => dispatch({ type: 'CHANGE_VIEW_TYPE', payload: 'day' })}>
                     Day
                 </Button>
                 <Button variant="contained" color="primary" className={classes.button}
-                    onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
+                    onClick={() => dispatch({ type: 'CHANGE_VIEW_TYPE', payload: 'week' })}>
                     Week
                 </Button>
                 <Button variant="contained" color="secondary" className={classes.button}
-                    onClick={() => dispatch({ type: 'DECREASE_TIME', payload: time })}>
+                    onClick={() => dispatch({ type: 'CHANGE_VIEW_TYPE', payload: 'month' })}>
                     Month
                 </Button>
             </FlexContainer>
