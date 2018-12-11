@@ -22,10 +22,8 @@ const Reducer = () => {
     <>
       <Typography variant='display3'>Toggle Time</Typography>
       <Typography variant='display1'>
-        {state.viewType === 'week'
-          ? moment(state.time).format()
-          : moment(state.time).toISOString()
-        }
+        {state.viewType === 'day' && moment(state.time).format('dddd')}
+        {state.viewType === 'week' && moment(state.time).format()}
       </Typography>
       <TimeButton dispatch={dispatch} time={state.time} viewType={state.viewType} />
     </>
