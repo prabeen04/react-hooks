@@ -24,6 +24,8 @@ const Reducer = () => {
       <Typography variant='display1'>
         {state.viewType === 'day' && moment(state.time).format('dddd')}
         {state.viewType === 'week' && moment(state.time).format()}
+        {state.viewType === 'month' && moment(state.time).format('MMMM')}
+        {state.viewType === 'year' && moment(state.time).format('YYYY')}
       </Typography>
       <TimeButton dispatch={dispatch} time={state.time} viewType={state.viewType} />
     </>
