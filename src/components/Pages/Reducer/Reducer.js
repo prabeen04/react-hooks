@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useContext } from 'react';
+import { NewsContext } from "../../../context/NewsListContext";
 import moment from 'moment';
 import Typography from '@material-ui/core/Typography'
 import TimeButton from './TimeButtons';
@@ -18,6 +19,8 @@ const appReducer = (state, action) => {
 }
 const Reducer = () => {
   const [state, dispatch] = useReducer(appReducer, { time: moment(), viewType: 'week' })
+  const newsContext = useContext(NewsContext);
+  console.log(newsContext)
   return (
     <>
       <Typography variant='display3'>Toggle Time</Typography>
