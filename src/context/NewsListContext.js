@@ -1,9 +1,4 @@
 import React from 'react'
 
-const NewsContext = React.createContext('dummy list');
+export const NewsContext = React.createContext([]);
 
-export default function NewsListContext(props) {
-    return (
-        <NewsContext.Provider value={'dummy list'}>{props.children}</NewsContext.Provider>
-    )
-}
