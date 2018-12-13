@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { NewsContext } from "../../../context/NewsListContext";
 import NewsList from './NewsList';
+const newsContext = useContext(NewsContext);
 
 function NewsHeader(props) {
     const { sources } = props;
