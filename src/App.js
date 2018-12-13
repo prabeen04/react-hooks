@@ -2,6 +2,7 @@ import React, { Component, lazy, Suspense } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Navbar from './components/Navigation/Navbar';
 import { ApplicationWrapper } from "./components/UI/Layouts";
+import { NewsContext } from "./context/NewsListContext";
 import './App.css';
 
 const Home = lazy(() => import('./components/Pages/Home/Home'))
@@ -24,6 +25,7 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
+      <NewsContext.Provider value={sources}>
       <ApplicationWrapper>
         <Navbar />
         <Suspense fallback={<div>Loading ...</div>}>
@@ -36,6 +38,7 @@ const App = (props) => {
           </Switch>
         </Suspense>
       </ApplicationWrapper>
+      </NewsContext.Provider>
     </React.Fragment>
   );
 }
