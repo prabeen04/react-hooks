@@ -11,6 +11,17 @@ const Context = lazy(() => import('./components/Pages/Context/Context'))
 const Reducer = lazy(() => import('./components/Pages/Reducer/Reducer'))
 
 const App = (props) => {
+  const [sources, setSources] = useState([]);
+
+  useEffect(() => {
+    fetch(`${news_api_url}/sources`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        setSources(res.sources)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <React.Fragment>
       <ApplicationWrapper>

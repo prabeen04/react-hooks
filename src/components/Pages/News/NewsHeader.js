@@ -5,9 +5,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { NewsContext } from "../../../context/NewsListContext";
 import NewsList from './NewsList';
-const newsContext = useContext(NewsContext);
 
 function NewsHeader(props) {
+    const newsContext = useContext(NewsContext);
     const { sources } = props;
     const [modalOpen, setModalOpen] = useState(false)
     const handleModalOpen = () => setModalOpen(!modalOpen)
