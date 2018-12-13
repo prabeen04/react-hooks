@@ -26,7 +26,7 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
-      <NewsContext.Provider value={sources, selectedSource, setSelectedSource}>
+      <NewsContext.Provider value={{sources, selectedSource, setSelectedSource}}>
       <ApplicationWrapper>
         <Navbar />
         <Suspense fallback={<div>Loading ...</div>}>
