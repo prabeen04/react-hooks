@@ -14,7 +14,7 @@ const Reducer = lazy(() => import('./components/Pages/Reducer/Reducer'))
 
 const App = (props) => {
   const [sources, setSources] = useState([]);
-
+  const [selectedSource, setSelectedSource] = useState('buzzfeed')
   useEffect(() => {
     fetch(`${news_api_url}/sources`)
       .then(res => res.json())
@@ -26,7 +26,7 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
-      <NewsContext.Provider value={sources}>
+      <NewsContext.Provider value={sources, selectedSource, setSelectedSource}>
       <ApplicationWrapper>
         <Navbar />
         <Suspense fallback={<div>Loading ...</div>}>
