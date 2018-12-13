@@ -1,8 +1,9 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component, lazy, Suspense, useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Navbar from './components/Navigation/Navbar';
 import { ApplicationWrapper } from "./components/UI/Layouts";
 import { NewsContext } from "./context/NewsListContext";
+import { news_api_url } from "./config/index";
 import './App.css';
 
 const Home = lazy(() => import('./components/Pages/Home/Home'))
