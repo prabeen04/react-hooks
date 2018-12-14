@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
+import { NewsContext } from "../../../context/NewsListContext";
 const styles = theme => ({
     container: {
         display: 'flex',
@@ -19,16 +19,17 @@ const styles = theme => ({
 
 function NewsList(props) {
     const { classes } = props;
+    const newsContext = useContext(NewsContext)
     return (
         <>
             <form className={classes.container}>
                 <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="age-simple">Age</InputLabel>
+                    <InputLabel htmlFor="age-simple">Select Source</InputLabel>
                     <Select
                         sele
-                        value={props.selectedSource}
+                        value={NewsContext.selectedSource}
                         onChange={(e) =>{ 
-                            props.setSelectedSource(e.target.value)
+                            NewsContext.setSelectedSource(e.target.value)
                             props.setModalOpen()
                         }}
                         input={<Input id="age-simple" />}

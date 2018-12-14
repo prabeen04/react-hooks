@@ -7,7 +7,6 @@ import { NewsContext } from "../../../context/NewsListContext";
 import NewsList from './NewsList';
 
 function NewsHeader(props) {
-    const { sources } = props;
     const newsContext = useContext(NewsContext);
     console.log(newsContext)
     const [modalOpen, setModalOpen] = useState(false)
