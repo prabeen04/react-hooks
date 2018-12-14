@@ -21,8 +21,8 @@ function NewsHeader(props) {
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
                     <NewsList
-                        sources={sources}
-                        setSelectedSource={props.setSelectedSource}
+                        sources={newsContext.sources}
+                        setSelectedSource={newsContext.setSelectedSource}
                         setModalOpen={handleModalOpen}
                     />
                 </DialogContent>
