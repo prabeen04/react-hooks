@@ -8,6 +8,7 @@ import NewsList from './NewsList';
 
 function NewsHeader(props) {
     const newsContext = useContext(NewsContext);
+    console.log(newsContext)
     const { sources } = props;
     const [modalOpen, setModalOpen] = useState(false)
     const handleModalOpen = () => setModalOpen(!modalOpen)
@@ -21,7 +22,7 @@ function NewsHeader(props) {
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
                     <NewsList
-                        sources={newsContext.sources}
+                        sources={newsContext}
                         setSelectedSource={newsContext.setSelectedSource}
                         setModalOpen={handleModalOpen}
                     />
