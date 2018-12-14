@@ -19,7 +19,7 @@ const styles = theme => ({
 
 function NewsList(props) {
     const { classes } = props;
-    const newsContext = useContext(NewsContext)
+    const { setSelectedSource, selectedSource, sources } = useContext(NewsContext)
     return (
         <>
             <form className={classes.container}>
@@ -27,16 +27,16 @@ function NewsList(props) {
                     <InputLabel htmlFor="age-simple">Select Source</InputLabel>
                     <Select
                         sele
-                        value={newsContext.selectedSource}
-                        onChange={(e) =>{ 
-                            newsContext.setSelectedSource(e.target.value)
+                        value={selectedSource}
+                        onChange={(e) => {
+                            setSelectedSource(e.target.value)
                             props.setModalOpen()
                         }}
                         input={<Input id="age-simple" />}
                     >
 
                         {
-                            props.sources && props.sources.map((source, i) => (
+                            sources && sources.map((source, i) => (
                                 <MenuItem key={i} value={source.id}>{source.name}</MenuItem>
                             ))
                         }
