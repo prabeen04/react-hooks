@@ -27,9 +27,9 @@ function NewsList(props) {
                     <InputLabel htmlFor="age-simple">Select Source</InputLabel>
                     <Select
                         sele
-                        value={NewsContext.selectedSource}
+                        value={newsContext.selectedSource}
                         onChange={(e) =>{ 
-                            NewsContext.setSelectedSource(e.target.value)
+                            newsContext.setSelectedSource(e.target.value)
                             props.setModalOpen()
                         }}
                         input={<Input id="age-simple" />}
