@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,7 +8,7 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-
+import { NewsContext } from "../../context/NewsListContext";
 import NavDrawer from './NavDrawer';
 
 const styles = theme => ({
@@ -73,6 +73,7 @@ const styles = theme => ({
 function SearchAppBar(props) {
     const [isOpen, setIsOpen] = useState(false)
     const { classes } = props;
+    const newsContext = useContext(NewsContext)
     const handleDrawerOpen = () => setIsOpen(!isOpen)
     return (
         <div className={classes.root}>
@@ -99,7 +100,7 @@ function SearchAppBar(props) {
                     </div>
                 </Toolbar>
             </AppBar>
-            <NavDrawer isOpen={isOpen} handleDrawerOpen={handleDrawerOpen}/>
+            <NavDrawer isOpen={isOpen} handleDrawerOpen={handleDrawerOpen} />
         </div>
     );
 }
