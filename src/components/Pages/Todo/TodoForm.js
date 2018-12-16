@@ -52,7 +52,7 @@ const TodoForm = (props) => {
                         className={classes.button}
                         onClick={handleAddTodo}
                         disabled={!todo}
-                        type='button'
+                        type='submit'
                     >
                         Create Todo
                 </Button>
