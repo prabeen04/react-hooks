@@ -7,7 +7,7 @@ const TodoList = lazy(() => import('./TodoList'));
 const TodoForm = lazy(() => import('./TodoForm'));
 const Todo = () => {
   const data = JSON.parse(localStorage.getItem('todos'))
-  const [todos, setsTodos] = useState(data)
+  const [todos, setsTodos] = useState(data || [{ todo: 'todo', isCompleted: false }])
   const timeContext = useContext(TimeContext);
   const toggleTodo = (todo, index) => {
     const newTodos = [...todos]
