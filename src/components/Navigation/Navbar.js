@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { NewsContext } from "../../context/NewsListContext";
 import NavDrawer from './NavDrawer';
-
+import NewsList from '../Pages/News/NewsList'
 const styles = theme => ({
     root: {
         width: '100%',
@@ -90,13 +90,18 @@ function SearchAppBar(props) {
                         <div className={classes.searchIcon}>
                             <SearchIcon />
                         </div>
-                        <InputBase
+                        <NewsList
+                        sources={newsContext.sources}
+                        setSelectedSource={newsContext.setSelectedSource}
+                        // setModalOpen={handleModalOpen}
+                    />
+                        {/* <InputBase
                             placeholder="Search…"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
-                        />
+                        /> */}
                     </div>
                 </Toolbar>
             </AppBar>
