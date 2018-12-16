@@ -5,9 +5,10 @@ import { TimeContext } from "../Context/TimeContext";
 
 const TodoList = lazy(() => import('./TodoList'));
 const TodoForm = lazy(() => import('./TodoForm'));
-
+localStorage.setItem('todos', [{ todo: 'code', iscompleted: false }, { todo: 'code again', isCompleted: false }])
 const Todo = () => {
-  const [todos, setsTodos] = useState([{ todo: 'code', iscompleted: false }, { todo: 'code again', isCompleted: false }])
+  const data = localStorage.getItem('todos')
+  const [todos, setsTodos] = useState()
   const timeContext = useContext(TimeContext);
   const toggleTodo = (todo, index) => {
     const newTodos = [...todos]
