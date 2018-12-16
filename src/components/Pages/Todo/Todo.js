@@ -13,18 +13,20 @@ const Todo = () => {
   const toggleTodo = (todo, index) => {
     const newTodos = [...todos]
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    localStorage.setItem('todos', JSON.stringify(newTodos))
     setsTodos(newTodos)
   }
   const addTodo = (todo) => {
     console.log(todo)
+    localStorage.setItem('todos', JSON.stringify([...todos, { todo, isCompleted: false }]))
     setsTodos([...todos, { todo, isCompleted: false }])
   }
 
   return (
     <>
-    <Typography variant='headline'>
-      {moment(timeContext.time).format('MMMM Do YYYY, h:mm:ss a')}
-    </Typography>
+      <Typography variant='headline'>
+        {moment(timeContext.time).format('MMMM Do YYYY, h:mm:ss a')}
+      </Typography>
       <TodoForm
         addTodo={addTodo} />
       <TodoList
