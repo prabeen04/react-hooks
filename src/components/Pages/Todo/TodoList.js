@@ -7,6 +7,8 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
@@ -37,7 +39,7 @@ const TodoList = ({ todos, classes, toggleTodo }) => {
               <ListItemSecondaryAction>
 
                 <IconButton aria-label="Comments">
-                  <CommentIcon />
+                  <DeleteIcon />
                 </IconButton>
               </ListItemSecondaryAction>
             </ListItem>
