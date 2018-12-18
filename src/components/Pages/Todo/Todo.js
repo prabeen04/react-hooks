@@ -24,7 +24,11 @@ const Todo = () => {
    * delete a todo with the Id provided
    */
   const deleteTodo = (todo, index) => {
-
+    console.log(todo, index)
+    const newTodos = [...todos];
+    newTodos.filter((todo, i) => todo[i] !== todo[index])
+    localStorage.setItem('todos', JSON.stringify(newTodos))
+    setsTodos(newTodos)
   }
 
   /**
@@ -45,9 +49,9 @@ const Todo = () => {
         addTodo={addTodo} />
       <TodoList
         todos={todos}
-        toggleTodo={toggleTodo} 
-        deleteTodo={deleteTodo} 
-        />
+        toggleTodo={toggleTodo}
+        deleteTodo={deleteTodo}
+      />
     </>
   )
 }
