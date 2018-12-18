@@ -7,6 +7,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
+import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -18,6 +19,9 @@ const styles = theme => ({
 
 const TodoList = ({todos, classes, toggleTodo }) => {
   console.log(todos)
+  if(!todos){
+    return <Typography variant='display2'> There are no todos found</Typography>
+  }
   return (
     <>
       <div className={classes.root}>
