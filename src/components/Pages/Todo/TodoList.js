@@ -19,7 +19,7 @@ const styles = theme => ({
   },
 });
 
-const TodoList = ({ todos, classes, toggleTodo }) => {
+const TodoList = ({ todos, classes, toggleTodo, deleteTodo }) => {
   console.log(todos)
   if (!todos) {
     return <Typography variant='display2'> There are no todos found</Typography>
@@ -38,7 +38,7 @@ const TodoList = ({ todos, classes, toggleTodo }) => {
               <ListItemText primary={` ${todo.todo}`} />
               <ListItemSecondaryAction>
 
-                <IconButton aria-label="Comments">
+                <IconButton aria-label="Comments" onClick={() => deleteTodo(todo, index)}>
                   <DeleteIcon />
                 </IconButton>
               </ListItemSecondaryAction>

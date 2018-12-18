@@ -45,7 +45,9 @@ const Todo = () => {
         addTodo={addTodo} />
       <TodoList
         todos={todos}
-        toggleTodo={toggleTodo} />
+        toggleTodo={toggleTodo} 
+        deleteTodo={deleteTodo} 
+        />
     </>
   )
 }
