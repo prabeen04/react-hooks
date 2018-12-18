@@ -17,9 +17,9 @@ const styles = theme => ({
   },
 });
 
-const TodoList = ({todos, classes, toggleTodo }) => {
+const TodoList = ({ todos, classes, toggleTodo }) => {
   console.log(todos)
-  if(!todos){
+  if (!todos) {
     return <Typography variant='display2'> There are no todos found</Typography>
   }
   return (
@@ -28,13 +28,17 @@ const TodoList = ({todos, classes, toggleTodo }) => {
         <List dense>
           {todos && todos.map((todo, index) => (
             <ListItem key={index} selected={todo.isCompleted} button>
+              <Checkbox
+                onChange={() => toggleTodo(todo, index)}
+                checked={todo.isCompleted}
+              />
               <Avatar alt="Remy Sharp" src="https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png" />
               <ListItemText primary={` ${todo.todo}`} />
               <ListItemSecondaryAction>
-                <Checkbox
-                  onChange={() => toggleTodo(todo, index)}
-                  checked={todo.isCompleted}
-                />
+
+                <IconButton aria-label="Comments">
+                  <CommentIcon />
+                </IconButton>
               </ListItemSecondaryAction>
             </ListItem>
           ))}
@@ -46,4 +50,4 @@ const TodoList = ({todos, classes, toggleTodo }) => {
 TodoList.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-export default  withStyles(styles)(TodoList);
+export default withStyles(styles)(TodoList);
