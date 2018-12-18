@@ -9,12 +9,27 @@ const Todo = () => {
   const data = JSON.parse(localStorage.getItem('todos'))
   const [todos, setsTodos] = useState(data || [])
   const timeContext = useContext(TimeContext);
+
+  /**
+   * toggle todo to completed or not
+   */
   const toggleTodo = (todo, index) => {
     const newTodos = [...todos]
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
     localStorage.setItem('todos', JSON.stringify(newTodos))
     setsTodos(newTodos)
   }
+
+  /**
+   * delete a todo with the Id provided
+   */
+  const deleteTodo = (todo, index) => {
+
+  }
+
+  /**
+   * add a new todo
+   */
   const addTodo = (todo) => {
     console.log(todo)
     localStorage.setItem('todos', JSON.stringify([...todos, { todo, isCompleted: false }]))
