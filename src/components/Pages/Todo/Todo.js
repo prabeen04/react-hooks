@@ -27,16 +27,19 @@ const Todo = () => {
     console.clear()
     console.log(todo, index)
     const newTodos = [...todos];
-    newTodos.filter((todo, i) =>{ 
-      console.log(todo)
-      console.log(i)
-      console.log(index)
+   const arr =  newTodos.filter((todo, i) => {
+      // return i === index 
        if(i !==index ){
-         console.log('index doesnotmatch')
+         console.log('index does not match')
+         return todo
+       }else{
+         console.log('index match')
+         return null
        }
     })
-    localStorage.setItem('todos', JSON.stringify(newTodos))
-    setsTodos(newTodos)
+    console.log(arr)
+    localStorage.setItem('todos', JSON.stringify(arr))
+    setsTodos(arr)
   }
 
   /**
