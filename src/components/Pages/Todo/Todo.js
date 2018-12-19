@@ -24,9 +24,17 @@ const Todo = () => {
    * delete a todo with the Id provided
    */
   const deleteTodo = (todo, index) => {
+    console.clear()
     console.log(todo, index)
     const newTodos = [...todos];
-    newTodos.filter((todo, i) => todo[i] !== todo[index])
+    newTodos.filter((todo, i) =>{ 
+      console.log(todo)
+      console.log(i)
+      console.log(index)
+       if(i !==index ){
+         console.log('index doesnotmatch')
+       }
+    })
     localStorage.setItem('todos', JSON.stringify(newTodos))
     setsTodos(newTodos)
   }
