@@ -26,9 +26,7 @@ const TodoList = ({ todos, classes, toggleTodo, deleteTodo }) => {
   }
   return (
     <>
-      {!todos 
-      ? <p>No todos found...</p>
-      :<div className={classes.root}>
+      <div className={classes.root}>
         <List dense>
           {todos && todos.map((todo, index) => (
             <ListItem key={index} selected={todo.isCompleted} button>
@@ -47,7 +45,7 @@ const TodoList = ({ todos, classes, toggleTodo, deleteTodo }) => {
             </ListItem>
           ))}
         </List>
-      </div>}
+      </div>
     </>
   )
 }
