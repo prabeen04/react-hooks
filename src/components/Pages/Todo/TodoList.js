@@ -21,8 +21,8 @@ const styles = theme => ({
 
 const TodoList = ({ todos, classes, toggleTodo, deleteTodo }) => {
   console.log(todos)
-  if (!todos) {
-    return <Typography variant='display2'> There are no todos found</Typography>
+  if (!todos.length) {
+    return <Typography variant='display1'> There are no todos found</Typography>
   }
   return (
     <>
