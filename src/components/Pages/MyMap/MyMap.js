@@ -1,8 +1,7 @@
 import React, { useState, lazy, Suspense } from 'react';
 import styled from 'styled-components'
 const MapWrapper = styled.div`
-    width: 100vw;
-    height: 80vh;
+    margin: 0 auto;
 `
 const MapContainer = lazy(() => import('./MapContainer'))
 const MyMap = (props) => {
