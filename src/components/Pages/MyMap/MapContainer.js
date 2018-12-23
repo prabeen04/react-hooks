@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 const MapContainer = (props) => {
-    const [data, setData] = useState({
-        lat: 51.505,
-        lng: -0.09,
-        zoom: 13,
-    })
-    const position = [data.lat, data.lng]
+    const position = [props.data.lat, props.data.lng]
     return (
         <>
-            <Map center={position} zoom={data.zoom}>
+            <Map center={position} zoom={props.data.zoom}>
                 <TileLayer
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
