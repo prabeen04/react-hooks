@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import MarkerList from './MarkerList';
+
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -23,6 +25,7 @@ const MapContainer = (props) => {
                 <Marker position={position}>
                     <Popup>A pretty CSS3 popup. <br /> Easily customizable.</Popup>
                 </Marker>
+                <MarkerList/>
             </Map>
 
         </>

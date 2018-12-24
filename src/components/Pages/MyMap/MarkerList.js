@@ -1,10 +1,7 @@
 import React from 'react'
-
+import { Marker, Popup } from "react-leaflet";
 
 const MyPopupMarker = ({mark}) => {
-    // console.log(children)
-    console.log(mark)
-    // console.log([...position.lat, position.lng])
     return (
         <Marker position={[mark.lat, mark.lng]}>
             <p>{mark.name}</p>
@@ -19,4 +16,4 @@ const MarkerList = ({ markers }) => {
     return <div style={{ display: 'none' }}>{items}</div>
 }
 
-export default MarkerList
+export default MarkerList;
