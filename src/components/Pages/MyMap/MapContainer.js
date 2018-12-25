@@ -19,9 +19,6 @@ const MapContainer = (props) => {
     return (
         <>
             <Map center={position} zoom={props.data.zoom} style={{ width: '100vw', height: '85vh', margin: 10 }}>
-                <Marker position={position}>
-                    <Popup>A pretty CSS3 popup. <br /> Easily customizable.</Popup>
-                </Marker>
                 <MarkerList markers={markers} />
             </Map>
 
