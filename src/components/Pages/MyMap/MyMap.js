@@ -19,10 +19,13 @@ const MyMap = (props) => {
     const position = [data.lat, data.lng]
     return (
         <MapWrapper>
-            <MapContainer
-                data={data}
-                markers={markers}
-            />
+            <Suspense fallback='loading map ...'>
+
+                <MapContainer
+                    data={data}
+                    markers={markers}
+                />
+            </Suspense>
         </MapWrapper>
     )
 }
