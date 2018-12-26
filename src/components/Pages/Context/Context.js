@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import moment from 'moment';
 import { TimeContext } from './TimeContext';
 import Consumer from './Consumer';
