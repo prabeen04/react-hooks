@@ -12,6 +12,7 @@ const Todo = lazy(() => import('./components/Pages/Todo/Todo'))
 const Context = lazy(() => import('./components/Pages/Context/Context'))
 const Reducer = lazy(() => import('./components/Pages/Reducer/Reducer'))
 const MyMap = lazy(() => import('./components/Pages/MyMap/MyMap'))
+const Spring = lazy(() => import('./components/Pages/Spring/Spring'))
 
 const App = (props) => {
   const [sources, setSources] = useState([]);
@@ -38,6 +39,7 @@ const App = (props) => {
             <Route exact path="/context" component={() => <Context />} />
             <Route exact path="/reducer" component={() => <Reducer />} />
             <Route exact path="/map" component={() => <MyMap />} />
+            <Route exact path="/spring" component={() => <Spring />} />
           </Switch>
         </Suspense>
       </ApplicationWrapper>

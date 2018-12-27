@@ -64,6 +64,12 @@ class NavDrawer extends React.Component {
                             <ListItemText primary='Map' />
                         </ListItem>
                     </Link>
+                    <Link to='/spring'>
+                        <ListItem button>
+                            <ListItemIcon><AssignmentIcon /></ListItemIcon>
+                            <ListItemText primary='Spring' />
+                        </ListItem>
+                    </Link>
                 </List>
             </div>
         );
