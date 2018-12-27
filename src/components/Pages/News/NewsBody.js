@@ -30,7 +30,7 @@ const NewsBody = (props) => {
         <div style={{ minHeight: '100vh', width: '100vw' }}>
             {fetching && <LoadingNews />}
             <Masonry
-                style={{ margin: '2rem' }}
+                style={{ margin: '1rem' }}
                 className={'my-gallery-class'} // default ''
                 elementType={'div'} // default 'div'
                 options={masonryOptions} // default {}

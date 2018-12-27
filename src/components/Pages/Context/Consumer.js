@@ -6,7 +6,7 @@ const Consumer = (props) => {
     const timeContext = useContext(TimeContext);
     return (
         <div>
-            <Typography variant='headline'>{moment(timeContext.time, 'HH:mm:ss').toString()}</Typography>
+            <Typography variant='headline'>{moment().format('HH:mm:ss').toString()}</Typography>
         </div>
     )
 }
