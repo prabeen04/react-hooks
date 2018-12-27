@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import { useSpring, animated } from 'react-spring';
+import React, { useState, useRef } from 'react';
+import { useSpring, animated } from 'react-spring/hooks';
 const cards = [
     {
       title: 'Build faster ⚡️',
@@ -25,7 +25,7 @@ const cards = [
   ];
 // Displays a row of cards
 // Usage of hook is within <Card> component below
-function App() {
+function Spring() {
   return (
     <div className="container">
       <div className="row">
@@ -42,7 +42,7 @@ function App() {
     </div>
   );
 }
-
+export default Spring
 function Card({ children }) {
   // We add this ref to card element and use in onMouseMove event ...
   // ... to get element's offset and dimensions.
