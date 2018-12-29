@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useSpring, animated } from 'react-spring/hooks';
+require('babel-core/lib/helpers/resolve')
 const cards = [
     {
       title: 'Build faster ⚡️',
@@ -32,9 +33,9 @@ function Spring() {
         {cards.map((card, i) => (
           <div className="column">
             <Card>
-              <div className="card-title">{card.title}</div>
-              <div className="card-body">{card.description}</div>
-              <img className="card-image" src={card.image} />
+              <div className="card-title">{'card.title'}</div>
+              <div className="card-body">{'card.description'}</div>
+              {/* <img className="card-image" src={card.image} /> */}
             </Card>
           </div>
         ))}
