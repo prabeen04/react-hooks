@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useSpring, animated } from 'react-spring/hooks';
-require('babel-core/lib/helpers/resolve')
+
 const cards = [
     {
       title: 'Build faster ⚡️',
