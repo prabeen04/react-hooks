@@ -44,7 +44,7 @@ function Spring() {
   );
 }
 export default Spring
-function Card({ children }) {
+function Card(props) {
   // We add this ref to card element and use in onMouseMove event ...
   // ... to get element's offset and dimensions.
   const ref = useRef();
@@ -108,7 +108,7 @@ function Card({ children }) {
         )
       }}
     >
-      {children}
+      {props.children}
     </animated.div>
   );
 }
