@@ -5,6 +5,7 @@ import { ApplicationWrapper } from "./components/UI/Layouts";
 import { NewsContext } from "./context/NewsListContext";
 import { news_api_url } from "./config/index";
 import './App.css';
+import AppErrorBoundary from './components/ErrorBoundary/AppErrorBoundary';
 
 const Home = lazy(() => import('./components/Pages/Home/Home'))
 const News = lazy(() => import('./components/Pages/News/News'))
@@ -28,21 +29,23 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
-      <NewsContext.Provider value={{sources, selectedSource, setSelectedSource}}>
-      <ApplicationWrapper>
-        <Navbar />
-        <Suspense fallback={<div>Loading ...</div>}>
-          <Switch>
-            <Route exact path="/" component={() => <Home />} />
-            <Route exact path="/news" component={() => <News />} />
-            <Route exact path="/todo" component={() => <Todo />} />
-            <Route exact path="/context" component={() => <Context />} />
-            <Route exact path="/reducer" component={() => <Reducer />} />
-            <Route exact path="/map" component={() => <MyMap />} />
-            <Route exact path="/spring" component={() => <Spring />} />
-          </Switch>
-        </Suspense>
-      </ApplicationWrapper>
+      <NewsContext.Provider value={{ sources, selectedSource, setSelectedSource }}>
+        <ApplicationWrapper>
+          <Navbar />
+          <Suspense fallback={<div>Loading ...</div>}>
+            <AppErrorBoundary>
+              <Switch>
+                <Route exact path="/" component={() => <Home />} />
+                <Route exact path="/news" component={() => <News />} />
+                <Route exact path="/todo" component={() => <Todo />} />
+                <Route exact path="/context" component={() => <Context />} />
+                <Route exact path="/reducer" component={() => <Reducer />} />
+                <Route exact path="/map" component={() => <MyMap />} />
+                <Route exact path="/spring" component={() => <Spring />} />
+              </Switch>
+            </AppErrorBoundary>
+          </Suspense>
+        </ApplicationWrapper>
       </NewsContext.Provider>
     </React.Fragment>
   );
