@@ -32,11 +32,11 @@ function Spring() {
       <div className="row">
         {cards.map((card, i) => (
           <div className="column">
-            <Card>
-              <div className="card-title">{'card.title'}</div>
-              <div className="card-body">{'card.description'}</div>
-              {/* <img className="card-image" src={card.image} /> */}
-            </Card>
+            <div>
+              <div className="card-title">{card.title}</div>
+              <div className="card-body">{card.description}</div>
+              <img className="card-image" src={card.image} />
+            </div>
           </div>
         ))}
       </div>
