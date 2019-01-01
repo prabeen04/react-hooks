@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSpring, animated } from "react-spring/hooks";
+import React, { useState, useRef } from 'react';
+import { useSpring } from "react-spring/hooks";
 import { animated } from 'react-spring';
 
 function Card(props) {
