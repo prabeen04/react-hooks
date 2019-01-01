@@ -1,3 +1,7 @@
+import React from 'react';
+import { useSpring, animated } from "react-spring/hooks";
+import { animated } from 'react-spring';
+
 function Card(props) {
     // We add this ref to card element and use in onMouseMove event ...
     // ... to get element's offset and dimensions.

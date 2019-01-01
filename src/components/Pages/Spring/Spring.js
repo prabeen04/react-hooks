@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { useSpring, animated } from 'react-spring/hooks';
 
 const cards = [
     {
