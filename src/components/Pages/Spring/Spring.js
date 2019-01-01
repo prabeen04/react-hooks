@@ -1,5 +1,5 @@
 import React, { useState, useRef, lazy, Suspense } from 'react';
-
+import { Spring as Spring_ } from "react-spring";
 const Card = lazy(() => import('./Card'))
 const cards = [
   {
@@ -33,11 +33,11 @@ function Spring() {
         <Suspense fallback={'loading ...'}>
           {cards.map((card, i) => (
             <div className="column">
-              <Card>
+              <Spring_ from={{ opacity: 0 }} to={{ opacity: 1 }}>
                 <div className="card-title">{card.title}</div>
                 <div className="card-body">{card.description}</div>
                 <img className="card-image" src={card.image} />
-              </Card>
+              </Spring_>
             </div>
           ))}
         </Suspense>
