@@ -34,9 +34,10 @@ function Spring() {
           {cards.map((card, i) => (
             <div className="column">
               <Spring_ from={{ opacity: 0 }} to={{ opacity: 1 }}>
-                <div className="card-title">{card.title}</div>
-                <div className="card-body">{card.description}</div>
-                <img className="card-image" src={card.image} />
+                {props => (<><div className="card-title">{card.title}</div>
+                  <div className="card-body">{card.description}</div>
+                  <img className="card-image" src={card.image} /></>)
+                }
               </Spring_>
             </div>
           ))}
