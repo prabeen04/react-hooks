@@ -1,15 +1,15 @@
 import React from 'react';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Navbar from '../Navbar';
 
-// it('render Navbar without crashing', () => {
-    describe('<Navbar />', () => {
-        describe('render()', () => {
-            test('renders the component', () => {
-                const wrapper = shallow(<Navbar />);
-                const component = wrapper.dive();
+describe('<Navbar />', () => {
+    describe('render()', () => {
+        test('renders the component', () => {
+            const wrapper = shallow(<Navbar />);
+            const component = wrapper.dive();
 
-                expect(toJson(component)).toMatchSnapshot();
-            });
+            expect(toJson(component)).toMatchSnapshot();
         });
     });
-// })
+});
