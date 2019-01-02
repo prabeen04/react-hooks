@@ -29,11 +29,11 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
-      <NewsContext.Provider value={{ sources, selectedSource, setSelectedSource }}>
-        <ApplicationWrapper>
-          <Navbar />
-          <Suspense fallback={<div>Loading ...</div>}>
-            <AppErrorBoundary>
+      <AppErrorBoundary>
+        <NewsContext.Provider value={{ sources, selectedSource, setSelectedSource }}>
+          <ApplicationWrapper>
+            <Navbar />
+            <Suspense fallback={<div>Loading ...</div>}>
               <Switch>
                 <Route exact path="/" component={() => <Home />} />
                 <Route exact path="/news" component={() => <News />} />
@@ -43,10 +43,10 @@ const App = (props) => {
                 <Route exact path="/map" component={() => <MyMap />} />
                 <Route exact path="/spring" component={() => <Spring />} />
               </Switch>
-            </AppErrorBoundary>
-          </Suspense>
-        </ApplicationWrapper>
-      </NewsContext.Provider>
+            </Suspense>
+          </ApplicationWrapper>
+        </NewsContext.Provider>
+      </AppErrorBoundary>
     </React.Fragment>
   );
 }
