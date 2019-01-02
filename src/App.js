@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from './components/Navigation/Navbar';
 import { ApplicationWrapper } from "./components/UI/Layouts";
 import { NewsContext } from "./context/NewsListContext";
@@ -29,24 +29,26 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
-      <AppErrorBoundary>
-        <NewsContext.Provider value={{ sources, selectedSource, setSelectedSource }}>
-          <ApplicationWrapper>
-            <Navbar />
-            <Suspense fallback={<div>Loading ...</div>}>
-              <Switch>
-                <Route exact path="/" component={() => <Home />} />
-                <Route exact path="/news" component={() => <News />} />
-                <Route exact path="/todo" component={() => <Todo />} />
-                <Route exact path="/context" component={() => <Context />} />
-                <Route exact path="/reducer" component={() => <Reducer />} />
-                <Route exact path="/map" component={() => <MyMap />} />
-                <Route exact path="/spring" component={() => <Spring />} />
-              </Switch>
-            </Suspense>
-          </ApplicationWrapper>
-        </NewsContext.Provider>
-      </AppErrorBoundary>
+      <Router>
+        <AppErrorBoundary>
+          <NewsContext.Provider value={{ sources, selectedSource, setSelectedSource }}>
+            <ApplicationWrapper>
+              <Navbar />
+              <Suspense fallback={<div>Loading ...</div>}>
+                <Switch>
+                  <Route exact path="/" component={() => <Home />} />
+                  <Route exact path="/news" component={() => <News />} />
+                  <Route exact path="/todo" component={() => <Todo />} />
+                  <Route exact path="/context" component={() => <Context />} />
+                  <Route exact path="/reducer" component={() => <Reducer />} />
+                  <Route exact path="/map" component={() => <MyMap />} />
+                  <Route exact path="/spring" component={() => <Spring />} />
+                </Switch>
+              </Suspense>
+            </ApplicationWrapper>
+          </NewsContext.Provider>
+        </AppErrorBoundary>
+      </Router>
     </React.Fragment>
   );
 }
