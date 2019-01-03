@@ -9,7 +9,7 @@ describe('<Navbar />', () => {
             const wrapper = shallow(<Navbar />);
             const component = wrapper.dive();
 
-            expect(toJson(component)).toMatchSnapshot();
+            expect(toJson(wrapper)).toMatchSnapshot();
         });
     });
 });

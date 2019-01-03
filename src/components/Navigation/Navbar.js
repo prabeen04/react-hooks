@@ -71,9 +71,9 @@ const styles = theme => ({
     },
 });
 function SearchAppBar(props) {
-    const [isOpen, setIsOpen] = useState(false)
     const { classes } = props;
     const newsContext = useContext(NewsContext)
+    const [isOpen, setIsOpen] = useState(false)
     const handleDrawerOpen = () => setIsOpen(!isOpen)
     return (
         <div className={classes.root}>
