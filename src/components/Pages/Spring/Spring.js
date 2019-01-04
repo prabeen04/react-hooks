@@ -1,5 +1,6 @@
 import React, { useState, useRef, lazy, Suspense } from 'react';
 import { Spring as Spring_ } from "react-spring";
+import './Spring.css';
 const Card = lazy(() => import('./Card'))
 const data = [
   {

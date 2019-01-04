@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useSpring } from "react-spring/hooks";
 import { animated } from 'react-spring';
+import './Spring.css';
 
 function Card(props) {
     // We add this ref to card element and use in onMouseMove event ...
