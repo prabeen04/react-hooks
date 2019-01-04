@@ -1,7 +1,7 @@
 import React, { useState, useRef, lazy, Suspense } from 'react';
 import { Spring as Spring_ } from "react-spring";
 const Card = lazy(() => import('./Card'))
-const cards = [
+const data = [
   {
     title: 'Build faster ⚡️',
     description:
@@ -27,6 +27,7 @@ const cards = [
 // Displays a row of cards
 // Usage of hook is within <Card> component below
 function Spring() {
+  const [cards, setCards] = useState(data)
   return (
     <div className="container">
       <div className="row">
