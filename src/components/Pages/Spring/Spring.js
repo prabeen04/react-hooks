@@ -32,10 +32,6 @@ function Spring() {
   const [cards, setCards] = useState(data)
   return (
     <div className="container">
-    
-    <Spring_ from={{ backgroundColor: 'red' }} to={{ backgroundColor: 'green' }}>
-      {props => <div style={props}>hello</div>}
-    </Spring_>
       <div className="row">
         <Suspense fallback={'loading ...'}>
           {cards.map((card, i) => (
