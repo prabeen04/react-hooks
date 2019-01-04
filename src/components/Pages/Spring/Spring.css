@@ -1,13 +1,3 @@
-* {
-    box-sizing: border-box;
-  }
-  html, body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'avenir next', avenir, -apple-system, BlinkMacSystemFont, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
-    color: #374047;
-  }
   #root {
     display: flex;
     flex-direction: column;
@@ -75,6 +65,25 @@
     flex: 1 1 auto;
     padding: 10px;
     width: 100%;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+  }
+  .card-title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .card-body {
+    margin-top: 27px;
+    margin-bottom: 27px;
+    line-height: 1.5;
+    font-size: 16px;
   }
   @media screen and (min-width: 980px) {
     .hero-body {
