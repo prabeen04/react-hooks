@@ -14,6 +14,7 @@ const Context = lazy(() => import('./components/Pages/Context/Context'))
 const Reducer = lazy(() => import('./components/Pages/Reducer/Reducer'))
 const MyMap = lazy(() => import('./components/Pages/MyMap/MyMap'))
 const Spring = lazy(() => import('./components/Pages/Spring/Spring'))
+const QRCode = lazy(() => import('./QRCode'))
 
 const App = (props) => {
   const [sources, setSources] = useState([]);
@@ -36,7 +37,7 @@ const App = (props) => {
               <Navbar />
               <Suspense fallback={<div>Loading ...</div>}>
                 <Switch>
-                  <Route exact path="/" component={() => <Home />} />
+                  <Route exact path="/" component={() => <QRCode />} />
                   <Route exact path="/news" component={() => <News />} />
                   <Route exact path="/todo" component={() => <Todo />} />
                   <Route exact path="/context" component={() => <Context />} />
