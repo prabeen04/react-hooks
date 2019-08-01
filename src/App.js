@@ -6,15 +6,15 @@ import { NewsContext } from "./context/NewsListContext";
 import { news_api_url } from "./config/index";
 import './App.css';
 import AppErrorBoundary from './components/ErrorBoundary/AppErrorBoundary';
-
+import QRCode from './QRCode'
 const Home = lazy(() => import('./components/Pages/Home/Home'))
 const News = lazy(() => import('./components/Pages/News/News'))
 const Todo = lazy(() => import('./components/Pages/Todo/Todo'))
 const Context = lazy(() => import('./components/Pages/Context/Context'))
 const Reducer = lazy(() => import('./components/Pages/Reducer/Reducer'))
 const MyMap = lazy(() => import('./components/Pages/MyMap/MyMap'))
-const Spring = lazy(() => import('./components/Pages/Spring/Spring'))
-const QRCode = lazy(() => import('./QRCode'))
+// const Spring = lazy(() => import('./components/Pages/Spring/Spring'))
+// const QRCode = lazy(() => import('./QRCode'))
 
 const App = (props) => {
   const [sources, setSources] = useState([]);
@@ -37,13 +37,13 @@ const App = (props) => {
               <Navbar />
               <Suspense fallback={<div>Loading ...</div>}>
                 <Switch>
-                  <Route exact path="/" component={() => <QRCode />} />
+                  <Route exact path="/" component={() => <Home />} />
                   <Route exact path="/news" component={() => <News />} />
                   <Route exact path="/todo" component={() => <Todo />} />
                   <Route exact path="/context" component={() => <Context />} />
                   <Route exact path="/reducer" component={() => <Reducer />} />
                   <Route exact path="/map" component={() => <MyMap />} />
-                  <Route exact path="/spring" component={() => <Spring />} />
+                  {/* <Route exact path="/spring" component={() => <Spring />} /> */}
                 </Switch>
               </Suspense>
             </ApplicationWrapper>

@@ -17,12 +17,12 @@ function News(props) {
       .catch(err => console.log(err))
   }, [])
   return (
-    <React.Fragment>
+    <>
       <NewsErrorBoundary>
         <NewsHeader sources={sources} setSelectedSource={setSelectedSource} />
         <NewsBody selectedSource={selectedSource} />
       </NewsErrorBoundary>
-    </React.Fragment>
+    </>
   )
 }
 

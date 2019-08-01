@@ -1,5 +1,5 @@
 import React from 'react'
-import { Img } from "the-platform";
+// import { Img } from "y";
 import ImageLoader from '../UI/Placeholder/ImageLoader'
 export default function Image(props) {
     /**
@@ -8,9 +8,9 @@ export default function Image(props) {
     console.log(process.env)
     return (
         <div>
-            <React.Suspense maxDuration={300} fallback={<ImageLoader/>}>
+            {/* <React.Suspense maxDuration={300} fallback={<ImageLoader/>}>
                 <Img src={props.url} style={{width: 'auto', height: 300}}/>
-            </React.Suspense>
+            </React.Suspense> */}
         </div>
     )
 }
