@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> render() renders the component 1`] = `
+<SearchAppBar
+  classes={
+    Object {
+      "grow": "SearchAppBar-grow-2",
+      "inputInput": "SearchAppBar-inputInput-8",
+      "inputRoot": "SearchAppBar-inputRoot-7",
+      "menuButton": "SearchAppBar-menuButton-3",
+      "root": "SearchAppBar-root-1",
+      "search": "SearchAppBar-search-5",
+      "searchIcon": "SearchAppBar-searchIcon-6",
+      "title": "SearchAppBar-title-4",
+    }
+  }
+/>
+`;
