@@ -28,7 +28,9 @@ function Unsplash(props) {
         <Card className={classes.card}>
           <CardActionArea>
             <CardMedia
-              component={() => <Image url={url} />}
+              // component={() => <Image url={url} />}
+              image={url}
+              style={{ height: 400 }}
             />
             <CardContent>
               <h3>

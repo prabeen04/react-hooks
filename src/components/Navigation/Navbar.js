@@ -82,9 +82,7 @@ function SearchAppBar(props) {
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
                         <MenuIcon onClick={handleDrawerOpen} />
                     </IconButton>
-                    <h3 className={classes.title}>
-                        Material-UI
-          </h3>
+                    <h3 className={classes.title}>Caterpillar</h3>
                     <div className={classes.grow} />
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -92,10 +90,7 @@ function SearchAppBar(props) {
                         </div>
                         <InputBase
                             placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
+                            classes={{ root: classes.inputRoot, input: classes.inputInput }}
                         />
                     </div>
                 </Toolbar>
