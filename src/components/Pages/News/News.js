@@ -15,7 +15,7 @@ function News(props) {
       .then(res => {
         console.log(res)
         const stylesSources = res.sources && res.sources.map((source, i) => {
-          return {...source, css: cssStyles[i]}
+          return { ...source, css: cssStyles[i] }
         })
         setSources(stylesSources)
       })
@@ -24,8 +24,10 @@ function News(props) {
   return (
     <>
       <NewsErrorBoundary>
-        {sources.length && <NewsSpring data={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource}/>}
-        <NewsHeader sources={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} />
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '0.5rem' }}>
+          <NewsSpring data={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} />
+        </div>
+        {/* <NewsHeader sources={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} /> */}
         <NewsBody selectedSource={selectedSource} />
       </NewsErrorBoundary>
     </>
