@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react'
 import { useTransition, useSpring, useChain, config } from 'react-spring'
 import { Global, Container, Item } from './style'
-import data from './data'
+// import data from './data'
 
-export default function NewsSpring() {
+export default function NewsSpring({ data }) {
   const [open, set] = useState(false)
 
   const springRef = useRef()
@@ -26,13 +26,25 @@ export default function NewsSpring() {
 
   // This will orchestrate the two animations above, comment the last arg and it creates a sequence
   useChain(open ? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
-
+  function handleContainerClick(a, b, c) {
+    console.log('container clicked')
+    set(!open)
+    console.log(a, b, c)
+  }
+  function handleItemClick(e, item) {
+    console.log('item clicked')
+    e.stopPropagation()
+    set(!open)
+    console.log(e, item)
+  }
   return (
     <>
-      <Global />
-      <Container style={{ ...rest, width: size, height: size }} onClick={() => set(open => !open)}>
+      {/* <Global /> */}
+      <Container style={{ ...rest, width: size, height: size }} onClick={handleContainerClick}>
         {transitions.map(({ item, key, props }) => (
-          <Item key={key} style={{ ...props, background: item.css }} />
+          <Item key={key} style={{ ...props, background: item.css }} onClick={(e) => handleItemClick(e, item)}>
+            {item.name}
+          </Item>
         ))}
       </Container>
     </>

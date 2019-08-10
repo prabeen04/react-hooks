@@ -73,7 +73,7 @@ class NavDrawer extends React.Component {
                     <Link to='/newsSpring'>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
-                            <ListItemText primary='Spring' />
+                            <ListItemText primary='News spring' />
                         </ListItem>
                     </Link>
                 </List>
