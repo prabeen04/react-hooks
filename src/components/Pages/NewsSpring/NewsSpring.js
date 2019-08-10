@@ -36,7 +36,9 @@ export default function NewsSpring({ data, selectedSource, setSelectedSource }) 
   return (
     <>
       <Container style={{ ...rest, width: size, height: size, position: 'relative' }} onClick={handleContainerClick}>
-        <h3 style={{position: 'absolute', left: '30%', top: '30%', color: '#fff', fontWeight: 'normal', letterSpacing: '3px'}}>Select News</h3>
+        <h3 style={{ position: 'absolute', left: '30%', top: '30%', color: '#fff', fontWeight: 'normal', letterSpacing: '3px' }}>
+          Select News
+          </h3>
         {transitions.map(({ item, key, props }) => (
           <Item key={key} style={{ ...props, background: item.css }} onClick={(e) => handleItemClick(e, item)}>
             {item.name}
