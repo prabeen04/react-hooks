@@ -16,7 +16,6 @@ const styles = theme => ({
 const CounterHook = (props) => {
     const { classes } = props;
     const [count, setCount] = useState(0)
-    // console.log(advice)
     document.title = `Current Count: ${count}`;
     return (
         <div style={{ position: 'fixed', bottom: 10, right: 10 }}>

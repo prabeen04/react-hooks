@@ -3,12 +3,9 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { NewsContext } from "../../../context/NewsListContext";
 import NewsList from './NewsList';
 
-function NewsHeader(props) {
-    const newsContext = useContext(NewsContext);
-    console.log(newsContext)
+function NewsHeader({sources, setSelectedSource, selectedSource}) {
     const [modalOpen, setModalOpen] = useState(false)
     const handleModalOpen = () => setModalOpen(!modalOpen)
     return (
@@ -21,8 +18,9 @@ function NewsHeader(props) {
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
                     <NewsList
-                        sources={newsContext.sources}
-                        setSelectedSource={newsContext.setSelectedSource}
+                        sources={sources}
+                        setSelectedSource={setSelectedSource}
+                        selectedSource={selectedSource}
                         setModalOpen={handleModalOpen}
                     />
                 </DialogContent>

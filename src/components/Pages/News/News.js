@@ -19,7 +19,7 @@ function News(props) {
   return (
     <>
       <NewsErrorBoundary>
-        <NewsHeader sources={sources} setSelectedSource={setSelectedSource} />
+        <NewsHeader sources={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} />
         <NewsBody selectedSource={selectedSource} />
       </NewsErrorBoundary>
     </>
