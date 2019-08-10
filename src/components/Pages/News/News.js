@@ -24,7 +24,7 @@ function News(props) {
   return (
     <>
       <NewsErrorBoundary>
-        {sources.length && <NewsSpring data={sources} />}
+        {sources.length && <NewsSpring data={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource}/>}
         <NewsHeader sources={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} />
         <NewsBody selectedSource={selectedSource} />
       </NewsErrorBoundary>

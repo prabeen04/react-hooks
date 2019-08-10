@@ -3,7 +3,7 @@ import { useTransition, useSpring, useChain, config } from 'react-spring'
 import { Global, Container, Item } from './style'
 // import data from './data'
 
-export default function NewsSpring({ data }) {
+export default function NewsSpring({ data, selectedSource, setSelectedSource }) {
   const [open, set] = useState(false)
 
   const springRef = useRef()
@@ -35,6 +35,7 @@ export default function NewsSpring({ data }) {
     console.log('item clicked')
     e.stopPropagation()
     set(!open)
+    setSelectedSource(item.id)
     console.log(e, item)
   }
   return (
