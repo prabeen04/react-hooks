@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import NewsHeader from './NewsHeader';
 import NewsBody from './NewsBody';
 import { news_api_url } from '../../../config';
 import NewsErrorBoundary from "../../ErrorBoundary/NewsErrorBoundary";
@@ -27,7 +26,6 @@ function News(props) {
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '0.5rem' }}>
           <NewsSpring data={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} />
         </div>
-        {/* <NewsHeader sources={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} /> */}
         <NewsBody selectedSource={selectedSource} />
       </NewsErrorBoundary>
     </>
