@@ -1,15 +1,28 @@
-import React, {useEffect, useReducer } from 'react';
-const initialState = {
+import React, { useEffect, useState } from 'react';
+import { news_api_url } from '../../../config';
+import cssStyles from '../NewsSpring/data';
 
-}
-function useNews() {
-    const [state, dispatch] = useReducer(newsReducer, initialState)
+export default function useNews() {
+    const [sources, setSources] = useState([]);
+    const [selectedSource, setSelectedSource] = useState('buzzfeed')
+
+    useEffect(() => {
+        fetch(`${news_api_url}/sources`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                const stylesSources = res.sources && res.sources.map((source, i) => {
+                    return { ...source, css: cssStyles[i] }
+                })
+                setSources(stylesSources)
+            })
+            .catch(err => console.log(err))
+    }, [])
+
     return {
-        state,
-        dispatch,
+        sources,
+        selectedSource,
+        setSelectedSource
     }
 }
 
-function newsReducer(state, action) {
-
-}
