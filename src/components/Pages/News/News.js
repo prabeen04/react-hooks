@@ -11,7 +11,7 @@ function News(props) {
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '0.5rem' }}>
           <NewsSpring data={sources} setSelectedSource={setSelectedSource} selectedSource={selectedSource} />
         </div>
-        <NewsBody/>
+        {selectedSource && <NewsBody selectedSource={selectedSource}/>}
       </NewsErrorBoundary>
     </>
   )

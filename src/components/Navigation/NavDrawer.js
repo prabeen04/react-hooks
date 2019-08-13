@@ -28,49 +28,49 @@ class NavDrawer extends React.Component {
         const sideList = (
             <div className={classes.list}>
                 <List>
-                    <Link to='/'>
+                    <Link to='/'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><InboxIcon /></ListItemIcon>
                             <ListItemText primary='Home' />
                         </ListItem>
                     </Link>
-                    <Link to='/news'>
+                    <Link to='/news'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><MailIcon /></ListItemIcon>
                             <ListItemText primary='News' />
                         </ListItem>
                     </Link>
-                    <Link to='/todo'>
+                    <Link to='/todo'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
                             <ListItemText primary='Todo' />
                         </ListItem>
                     </Link>
-                    <Link to='/context'>
+                    <Link to='/context'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
                             <ListItemText primary='Context' />
                         </ListItem>
                     </Link>
-                    <Link to='/reducer'>
+                    <Link to='/reducer'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><InboxIcon /></ListItemIcon>
                             <ListItemText primary='Reducer' />
                         </ListItem>
                     </Link>
-                    <Link to='/map'>
+                    <Link to='/map'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
                             <ListItemText primary='Map' />
                         </ListItem>
                     </Link>
-                    <Link to='/spring'>
+                    <Link to='/spring'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
                             <ListItemText primary='Spring' />
                         </ListItem>
                     </Link>
-                    <Link to='/newsSpring'>
+                    <Link to='/newsSpring'style={{textDecoration: 'none'}}>
                         <ListItem button>
                             <ListItemIcon><AssignmentIcon /></ListItemIcon>
                             <ListItemText primary='News spring' />
