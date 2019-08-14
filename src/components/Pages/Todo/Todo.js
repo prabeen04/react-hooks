@@ -1,14 +1,12 @@
-import React, { lazy, Suspense, useState, useContext } from 'react'
+import React, { lazy, useState } from 'react'
 import Typography from '@material-ui/core/Typography';
 import moment from 'moment';
-import { TimeContext } from "../Context/TimeContext";
 
 const TodoList = lazy(() => import('./TodoList'));
 const TodoForm = lazy(() => import('./TodoForm'));
 const Todo = () => {
   const data = JSON.parse(localStorage.getItem('todos'))
   const [todos, setsTodos] = useState(data || [])
-  const timeContext = useContext(TimeContext);
 
   /**
    * toggle todo to completed or not
@@ -47,9 +45,6 @@ const Todo = () => {
 
   return (
     <>
-      <Typography variant='headline'>
-        {moment(timeContext.time).format('MMMM Do YYYY, h:mm:ss a')}
-      </Typography>
       <TodoForm
         addTodo={addTodo} />
       <TodoList
