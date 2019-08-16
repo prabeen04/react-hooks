@@ -6,6 +6,7 @@ import { NewsContext } from "./context/NewsListContext";
 import { news_api_url } from "./config/index";
 import './App.css';
 import AppErrorBoundary from './components/ErrorBoundary/AppErrorBoundary';
+import CheckOnline from './utils/CheckOnline';
 
 const Home = lazy(() => import('./components/Pages/Home/Home'))
 const News = lazy(() => import('./components/Pages/News/News'))
@@ -29,6 +30,7 @@ const App = (props) => {
   }, [])
   return (
     <React.Fragment>
+      <CheckOnline/>
       <Router>
         <AppErrorBoundary>
           <NewsContext.Provider value={{ sources, selectedSource, setSelectedSource }}>
