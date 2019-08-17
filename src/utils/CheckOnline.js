@@ -31,7 +31,7 @@ const CheckOnlineContainer = styled.div`
     left: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: rgba(1, 8, 46, 0.45);
+    background: rgba(1, 8, 46, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,5 +46,7 @@ const MessageText = styled.h1`
     height: 200px;
     background-color: teal;
     color: #fff;
+    font-family: Roboto;
+    letter-spacing: 2px;
     padding: 1rem 2rem;
 `
