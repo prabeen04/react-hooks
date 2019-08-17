@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 export default function CheckOnline() {
-    const isOnline = window.navigator.onLine;
-    if (!isOnline) return null;
+    const [isOnline, setIsOnline] = useState(window.navigator.onLine)
+    useEffect(() => {
+        window.addEventListener('offline', (a, b, c) => {
+            console.log(a, b, c)
+        })
+        window.addEventListener('online', (a, b, c) => {
+            console.log(a, b, c)
+        })
+    }, [])
+    if (isOnline) return null;
     return (
         <CheckOnlineContainer>
             <MessageText>You are offline, connect to internet to get access .</MessageText>
