@@ -4,12 +4,17 @@ import styled from 'styled-components';
 export default function CheckOnline() {
     const [isOnline, setIsOnline] = useState(window.navigator.onLine)
     useEffect(() => {
-        window.addEventListener('offline', (a, b, c) => {
-            console.log(a, b, c)
-        })
-        window.addEventListener('online', (a, b, c) => {
-            console.log(a, b, c)
-        })
+        function handleConnectionChange(status) {
+            console.log(status)
+            alert('network change detected')
+            setIsOnline(status)
+        }
+        window.addEventListener('offline', handleConnectionChange)
+        window.addEventListener('online', handleConnectionChange)
+        return () => {
+            window.removeEventListener('offline', handleConnectionChange)
+            window.removeEventListener('online', handleConnectionChange)
+        }
     }, [])
     if (isOnline) return null;
     return (
